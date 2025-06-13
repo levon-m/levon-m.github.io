@@ -7,14 +7,13 @@ export default function Home() {
     { href: '/experience', text: 'work experience' },
     { href: '/education', text: 'education' },
     { href: '/contact', text: 'contact' },
-    { href: '/music', text: 'music' },
     { href: '/cv.pdf', text: 'download cv' },
   ]
 
   return (
-    <main className="min-h-screen p-8 md:p-16">
-      <div className="max-w-2xl space-y-8">
-        <h1 className="text-2xl font-bold mb-8">Levon Melkonyan</h1>
+    <main className="min-h-screen flex items-center justify-center">
+      <div className="max-w-2xl p-16 space-y-12">
+        <h1 className="text-3xl name">Levon Melkonyan</h1>
         {links.map((link) => (
           <div key={link.href} className="text-xl">
             <Link href={link.href} className="link">

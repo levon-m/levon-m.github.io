@@ -14,10 +14,15 @@
   }
   
   .link:hover {
-    @apply text-hover-blue;
+    @apply text-[#2E4F2E];
+    text-shadow: 0 0 8px rgba(46, 79, 46, 0.2);
   }
 
   .link:hover span {
     @apply italic;
+  }
+
+  .name {
+    @apply font-['Courier_Prime'] font-bold;
   }
 } 
