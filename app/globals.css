@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-black font-courier;
+    @apply font-['Courier_Prime'];
   }
 }
 
@@ -23,6 +23,6 @@
   }
 
   .name {
-    @apply font-['Courier_Prime'] font-bold;
+    @apply font-bold;
   }
 } 

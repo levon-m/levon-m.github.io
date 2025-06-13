@@ -11,8 +11,8 @@ export default function Home() {
   ]
 
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <div className="max-w-2xl p-16 space-y-12">
+    <main className="min-h-screen flex items-center">
+      <div className="max-w-2xl p-16 space-y-12 ml-[25%]">
         <h1 className="text-3xl name">Levon Melkonyan</h1>
         {links.map((link) => (
           <div key={link.href} className="text-xl">
