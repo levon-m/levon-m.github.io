@@ -10,4 +10,15 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+  font-family: "Courier New", Courier, monospace;
+}
+
+@layer base {
+  a {
+    @apply no-underline text-inherit;
+  }
+  
+  a:hover {
+    @apply italic text-blue-400;
+  }
 } 
