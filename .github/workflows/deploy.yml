@@ -6,6 +6,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -30,10 +32,14 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: List out directory contents
+        run: ls -la out
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_PAT }}
           publish_dir: ./out
           commit_message: "Deploy to GitHub Pages"
-          force: true 
+          force: true
+          enable_jekyll: false 
