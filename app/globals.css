@@ -25,4 +25,22 @@
   .name {
     @apply italic;
   }
+
+  .thin-underline {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+  }
+
+  .back-button {
+    @apply text-black no-underline;
+  }
+
+  .back-button:hover {
+    @apply text-[#2A7A7A];
+    text-shadow: 0 0 12px rgba(42, 122, 122, 0.3);
+  }
+
+  .back-button:hover span {
+    @apply italic;
+  }
 } 
