@@ -5,7 +5,7 @@ export default function Experience() {
     <main className="min-h-screen p-8 md:p-16">
       <div className="max-w-2xl mx-auto">
         <Link href="/hello" className="link text-xl mb-8 inline-block">
-          ← back
+          <span>← back</span>
         </Link>
         <div className="mt-8 space-y-6">
           <h1 className="text-3xl font-bold">work experience</h1>

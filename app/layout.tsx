@@ -1,6 +1,5 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Levon Melkonyan',
@@ -14,14 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <div className="fixed top-4 left-4">
-          <Link href="/hello" className="back-button">
-            <span>← back</span>
-          </Link>
-        </div>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   )
 } 
