@@ -22,6 +22,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Clean
+        run: |
+          rm -rf .next
+          rm -rf out
+
       - name: Build static site
         run: npm run build
 
@@ -30,4 +35,5 @@ jobs:
         with:
           github_token: ${{ secrets.GH_PAT }}
           publish_dir: ./out
-          commit_message: "Deploy to GitHub Pages" 
+          commit_message: "Deploy to GitHub Pages"
+          force: true 
