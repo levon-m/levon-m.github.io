@@ -14,8 +14,8 @@
   }
   
   .link:hover {
-    @apply text-[#3A7A3A];
-    text-shadow: 0 0 12px rgba(58, 122, 58, 0.3);
+    @apply text-[#2A7A7A];
+    text-shadow: 0 0 12px rgba(42, 122, 122, 0.3);
   }
 
   .link:hover span {
