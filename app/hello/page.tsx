@@ -13,11 +13,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen p-8 md:p-16">
-      <div className="max-w-2xl mx-auto space-y-8">
+      <div className="max-w-2xl space-y-8">
+        <h1 className="text-2xl font-bold mb-8">Levon Melkonyan</h1>
         {links.map((link) => (
           <div key={link.href} className="text-xl">
             <Link href={link.href} className="link">
-              {link.text}
+              <span>{link.text}</span>
             </Link>
           </div>
         ))}

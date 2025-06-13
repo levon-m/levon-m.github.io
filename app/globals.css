@@ -10,10 +10,14 @@
 
 @layer components {
   .link {
-    @apply text-black no-underline transition-all duration-300;
+    @apply text-black no-underline transition-colors duration-300;
   }
   
   .link:hover {
-    @apply text-hover-blue italic;
+    @apply text-hover-blue;
+  }
+
+  .link:hover span {
+    @apply italic;
   }
 } 
