@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-black font-courier;
+  }
+}
+
+@layer components {
+  .link {
+    @apply text-black no-underline transition-all duration-300;
+  }
+  
+  .link:hover {
+    @apply text-hover-blue italic;
+  }
+} 
