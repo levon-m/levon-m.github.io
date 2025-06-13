@@ -9,17 +9,10 @@ export default function Projects() {
         </Link>
         <div className="mt-8 space-y-6">
           <h1 className="text-3xl font-bold">personal projects</h1>
-          <div className="space-y-8">
-            {/* Project items will go here */}
-            <div className="border-t border-gray-200 pt-6">
-              <h2 className="text-xl font-bold">[Project Name]</h2>
-              <p className="mt-2">[Project Description]</p>
-              <div className="mt-2">
-                <Link href="#" className="link">
-                  [Project Link]
-                </Link>
-              </div>
-            </div>
+          <div className="prose prose-lg">
+            <p>
+              [Your projects information here]
+            </p>
           </div>
         </div>
       </div>
