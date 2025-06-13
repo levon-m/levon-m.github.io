@@ -10,12 +10,12 @@
 
 @layer components {
   .link {
-    @apply text-black no-underline transition-colors duration-300;
+    @apply text-black no-underline;
   }
   
   .link:hover {
-    @apply text-[#2E4F2E];
-    text-shadow: 0 0 8px rgba(46, 79, 46, 0.2);
+    @apply text-[#3A7A3A];
+    text-shadow: 0 0 12px rgba(58, 122, 58, 0.3);
   }
 
   .link:hover span {
