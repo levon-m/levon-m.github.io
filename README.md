@@ -1,5 +1,9 @@
 # Personal Portfolio Website
 
+Last updated: 2024-03-19
+
+This is my personal portfolio website built with Next.js and deployed to GitHub Pages.
+
 A minimalistic and clean personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Features
