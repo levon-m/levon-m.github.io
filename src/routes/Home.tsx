@@ -1,64 +1,133 @@
 import { Link } from 'react-router-dom'
-import AsciiWave from '../components/common/AsciiWave'
 import { homeNavItems } from '../data/projects'
 
 export default function Home() {
+  const projectTags: Record<string, string[]> = {
+    '/microloop': ['embedded', 'audio', 'hardware', 'c++'],
+    '/bassmint': ['music-tech', 'juce', 'audio', 'hardware'],
+    '/voice': ['privacy', 'activism', 'web'],
+    '/prison-island': ['game-design', 'interactive', 'ux'],
+  }
+
   return (
-    <div className="h-full overflow-hidden flex flex-col">
-      {/* Hero Section */}
-      <section className="relative py-6 overflow-hidden">
-        {/* ASCII Wave Background */}
-        <AsciiWave rows={8} speed={0.02} opacity={0.25} />
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Name & Title */}
-          <div className="opacity-0 animate-fade-in">
-            <span className="font-mono text-accent text-sm tracking-wider">
-              {'>'} hello, I'm
-            </span>
-          </div>
-
-          <h1 className="mt-1 text-4xl sm:text-5xl font-bold text-surface opacity-0 animate-slide-up animate-delay-100">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        {/* Header Section */}
+        <section className="mb-16">
+          <h1 className="text-4xl sm:text-5xl font-bold text-surface mb-6">
             Levon Melkonyan
           </h1>
 
-          {/* Tagline */}
-          <p className="mt-2 text-lg sm:text-xl text-surface-light font-light opacity-0 animate-slide-up animate-delay-200">
-            Embedded audio software engineer, bass player, and music tech enthusiast.
-          </p>
+          {/* Bio */}
+          <div className="text-surface space-y-4 text-base leading-relaxed max-w-2xl">
+            <p>
+              Hello! I'm an embedded software developer based in Los Angeles, CA.
+            </p>
+            <p>
+              I studied Computer Science at Cal Poly SLO, and have since been developing real-time aerospace applications at CK Technologies, Inc.
+            </p>
+            <p>
+              At heart, I am a bass player and music producer, and nothing excites me more than the intersection of sound and technology. In my free time, I am developing software and hardware for live music performance and music theory practice, particularly with the Teensy platform.
+            </p>
 
-          {/* Description */}
-          <p className="mt-3 text-surface max-w-2xl text-base opacity-0 animate-slide-up animate-delay-300">
-            I love the intersection of music and technology, as well as hardware and software.
-            Currently exploring real-time audio processing on embedded platforms and creating
-            tools that make practicing and performing more engaging.
-          </p>
-        </div>
-      </section>
+            {/* Links */}
+            <div className="flex gap-6 pt-2">
+              <a
+                href="/assets/Levon_Melkonyan_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline hover:italic"
+              >
+                CV
+              </a>
+              <a
+                href="https://github.com/levon-m"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline hover:italic"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/levonmelkonyan/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline hover:italic"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="mailto:levonmelkonyan@gmail.com"
+                className="text-accent underline hover:italic"
+              >
+                Email
+              </a>
+            </div>
+          </div>
+        </section>
 
-      {/* Navigation Stack */}
-      <section className="py-8 flex-1 flex items-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <nav className="space-y-6" aria-label="Main navigation">
-            {homeNavItems.map((item, index) => (
+        {/* Projects Section */}
+        <section className="space-y-12">
+          {homeNavItems.map((item, index) => {
+            const isImageLeft = index % 2 === 0
+            const tags = projectTags[item.to] || []
+
+            // Skip the Links page from projects
+            if (item.to === '/links') {
+              return (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="block text-accent underline hover:italic text-xl"
+                >
+                  {item.title} - {item.subtitle}
+                </Link>
+              )
+            }
+
+            return (
               <Link
                 key={item.to}
                 to={item.to}
-                className="group block text-accent hover:italic transition-all
-                          opacity-0 animate-slide-up text-3xl leading-relaxed"
-                style={{
-                  animationDelay: `${400 + index * 80}ms`,
-                  animationFillMode: 'forwards',
-                }}
+                className="block group no-underline"
               >
-                <span className="font-mono text-lg text-surface-light mr-4">→</span>
-                {item.title}
-                <span className="text-surface-light text-lg ml-4">({item.subtitle})</span>
+                <div className="relative bg-accent/10 rounded-2xl p-8 hover:bg-accent/15 transition-colors">
+                  <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}>
+                    {/* Image Placeholder */}
+                    <div className="w-full md:w-1/2 aspect-video bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
+                      <span className="text-surface-light font-mono text-sm">
+                        [Project Image]
+                      </span>
+                    </div>
+
+                    {/* Project Info */}
+                    <div className="w-full md:w-1/2 space-y-3">
+                      <h2 className="text-2xl font-bold text-surface group-hover:italic transition-all">
+                        {item.title}
+                      </h2>
+                      <p className="text-surface-light">
+                        {item.subtitle}
+                      </p>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        {tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-3 py-1 bg-cream/50 text-surface text-sm rounded-full font-mono"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </Link>
-            ))}
-          </nav>
-        </div>
-      </section>
+            )
+          })}
+        </section>
+      </div>
     </div>
   )
 }

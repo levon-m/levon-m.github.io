@@ -12,6 +12,25 @@
     @apply bg-background text-surface font-sans antialiased;
   }
 
+  /* Global link styles */
+  a {
+    text-decoration: underline;
+    transition: none;
+  }
+
+  a:hover {
+    font-style: italic;
+  }
+
+  /* Override for specific cases */
+  a.no-underline {
+    text-decoration: none;
+  }
+
+  a.no-underline:hover {
+    font-style: normal;
+  }
+
   /* Respect reduced motion preferences */
   @media (prefers-reduced-motion: reduce) {
     *,
