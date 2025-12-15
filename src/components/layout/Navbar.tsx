@@ -26,15 +26,15 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 bg-surface-dark/95 backdrop-blur-sm border-b border-gray-800">
+    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-surface">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             to="/"
-            className="font-mono text-lg font-medium text-accent hover:text-accent-light transition-colors"
+            className="font-mono text-lg font-medium text-accent hover:text-accent-dark transition-colors"
           >
-            <span className="text-gray-500">&gt;</span> levon.m
+            <span className="text-surface-light">&gt;</span> levon.m
           </Link>
 
           {/* Desktop Navigation */}
@@ -50,26 +50,26 @@ export default function Navbar() {
                   <button
                     className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                       location.pathname.startsWith('/projects')
-                        ? 'text-accent bg-surface-light'
-                        : 'text-gray-300 hover:text-white hover:bg-surface-light'
+                        ? 'text-accent bg-cream/20'
+                        : 'text-surface hover:text-accent hover:bg-cream/10'
                     }`}
                   >
                     {link.label}
                     <span className="ml-1 text-xs">▾</span>
                   </button>
                   {projectsOpen && (
-                    <div className="absolute top-full left-0 mt-1 w-48 bg-surface rounded-md shadow-lg border border-gray-700 py-1">
+                    <div className="absolute top-full left-0 mt-1 w-48 bg-cream rounded-md shadow-lg border border-peach/30 py-1">
                       {projectLinks.map((project) => (
                         <Link
                           key={project.to}
                           to={project.to}
                           className={`block px-4 py-2 text-sm transition-colors ${
                             location.pathname === project.to
-                              ? 'text-accent bg-surface-light'
-                              : 'text-gray-300 hover:text-white hover:bg-surface-light'
+                              ? 'text-accent bg-background'
+                              : 'text-surface hover:text-accent hover:bg-background'
                           }`}
                         >
-                          <span className="font-mono text-gray-500 mr-2">//</span>
+                          <span className="font-mono text-surface-light mr-2">//</span>
                           {project.label}
                         </Link>
                       ))}
@@ -82,8 +82,8 @@ export default function Navbar() {
                   to={link.to}
                   className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                     isActive(link.to)
-                      ? 'text-accent bg-surface-light'
-                      : 'text-gray-300 hover:text-white hover:bg-surface-light'
+                      ? 'text-accent bg-cream/20'
+                      : 'text-surface hover:text-accent hover:bg-cream/10'
                   }`}
                 >
                   {link.label}
@@ -95,7 +95,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-surface-light focus:outline-none focus:ring-2 focus:ring-accent"
+            className="md:hidden p-2 rounded-md text-surface hover:text-accent hover:bg-cream/10 focus:outline-none focus:ring-2 focus:ring-accent"
             aria-label="Toggle menu"
           >
             <svg
@@ -125,20 +125,20 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-800">
+          <div className="md:hidden py-4 border-t border-surface">
             <div className="space-y-1">
               <Link
                 to="/"
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-2 text-base rounded-md ${
                   isActive('/')
-                    ? 'text-accent bg-surface-light'
-                    : 'text-gray-300 hover:text-white hover:bg-surface-light'
+                    ? 'text-accent bg-cream/20'
+                    : 'text-surface hover:text-accent hover:bg-cream/10'
                 }`}
               >
                 Home
               </Link>
-              <div className="px-4 py-2 text-sm text-gray-500 font-mono">// Projects</div>
+              <div className="px-4 py-2 text-sm text-surface-light font-mono">// Projects</div>
               {projectLinks.map((project) => (
                 <Link
                   key={project.to}
@@ -146,8 +146,8 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block pl-8 pr-4 py-2 text-base rounded-md ${
                     location.pathname === project.to
-                      ? 'text-accent bg-surface-light'
-                      : 'text-gray-300 hover:text-white hover:bg-surface-light'
+                      ? 'text-accent bg-cream/20'
+                      : 'text-surface hover:text-accent hover:bg-cream/10'
                   }`}
                 >
                   {project.label}
@@ -158,8 +158,8 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-2 text-base rounded-md ${
                   isActive('/voice')
-                    ? 'text-accent bg-surface-light'
-                    : 'text-gray-300 hover:text-white hover:bg-surface-light'
+                    ? 'text-accent bg-cream/20'
+                    : 'text-surface hover:text-accent hover:bg-cream/10'
                 }`}
               >
                 VOICE
@@ -169,8 +169,8 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-2 text-base rounded-md ${
                   isActive('/contact')
-                    ? 'text-accent bg-surface-light'
-                    : 'text-gray-300 hover:text-white hover:bg-surface-light'
+                    ? 'text-accent bg-cream/20'
+                    : 'text-surface hover:text-accent hover:bg-cream/10'
                 }`}
               >
                 Contact
@@ -180,8 +180,8 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-2 text-base rounded-md ${
                   isActive('/resume')
-                    ? 'text-accent bg-surface-light'
-                    : 'text-gray-300 hover:text-white hover:bg-surface-light'
+                    ? 'text-accent bg-cream/20'
+                    : 'text-surface hover:text-accent hover:bg-cream/10'
                 }`}
               >
                 Resume

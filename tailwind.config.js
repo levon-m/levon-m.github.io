@@ -7,17 +7,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Customize your accent color here
+        // Color palette: Eggshell, Burnt Peach, Twilight Indigo, Muted Teal, Apricot Cream
         accent: {
-          DEFAULT: '#14b8a6', // teal-500
-          light: '#5eead4',   // teal-300
-          dark: '#0f766e',    // teal-700
+          DEFAULT: '#81b29a', // Muted Teal (links)
+          light: '#a8cfc0',
+          dark: '#5a8872',
         },
         surface: {
-          DEFAULT: '#1a1a2e',
-          light: '#25253d',
-          dark: '#12121f',
-        }
+          DEFAULT: '#3d405b', // Twilight Indigo
+          light: '#4f5270',
+          dark: '#2a2c3f',
+        },
+        background: '#f4f1de', // Eggshell
+        peach: '#e07a5f',      // Burnt Peach
+        cream: '#f2cc8f',      // Apricot Cream
       },
       fontFamily: {
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],

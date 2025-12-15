@@ -16,17 +16,17 @@ function generateWaveLine(
   totalRows: number
 ): string {
   let line = ''
-  const rowPhaseOffset = (rowIndex / totalRows) * Math.PI * 0.5
+  const rowPhaseOffset = (rowIndex / totalRows) * Math.PI * 2
 
   for (let x = 0; x < width; x++) {
-    // Create a sine wave pattern
+    // Create a tighter audio wave pattern with higher frequency
     const waveValue =
-      Math.sin((x / 15) + time + rowPhaseOffset) * 0.5 +
-      Math.sin((x / 7) + time * 1.3 + rowPhaseOffset) * 0.3 +
-      Math.sin((x / 23) + time * 0.7) * 0.2
+      Math.sin((x / 3) + time + rowPhaseOffset) * 0.7 +
+      Math.sin((x / 1.5) + time * 1.8 + rowPhaseOffset) * 0.5 +
+      Math.sin((x / 4.5) + time * 1.2) * 0.3
 
-    // Normalize to 0-1 range
-    const normalized = (waveValue + 1) / 2
+    // Normalize to 0-1 range with more pronounced variation
+    const normalized = (waveValue + 1.5) / 3
 
     // Map to character index
     const charIndex = Math.floor(normalized * (WAVE_CHARS.length - 1))

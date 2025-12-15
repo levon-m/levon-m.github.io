@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
-import Footer from './components/layout/Footer'
 import Home from './routes/Home'
 import MicroLoopPage from './routes/MicroLoopPage'
 import BassMINTPage from './routes/BassMINTPage'
@@ -12,7 +11,7 @@ import LinksPage from './routes/LinksPage'
 
 function App() {
   return (
-    <div className="min-h-screen bg-surface-dark text-gray-100 flex flex-col">
+    <div className="min-h-screen bg-background text-surface flex flex-col">
       <Navbar />
       <main className="flex-1">
         <Routes>
@@ -26,7 +25,6 @@ function App() {
           <Route path="/links" element={<LinksPage />} />
         </Routes>
       </main>
-      <Footer />
     </div>
   )
 }
