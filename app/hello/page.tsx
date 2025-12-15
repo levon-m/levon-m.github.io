@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex items-center">
       <div className="max-w-2xl p-16 space-y-12 ml-[5%]">
-        <h1 className="text-4xl name">Levon Melkonyan</h1>
+        <h1 className="text-5xl name">Levon Melkonyan</h1>
         {links.map((link) => (
           <div key={link.href} className="text-xl">
             <span className="mr-2">•</span>

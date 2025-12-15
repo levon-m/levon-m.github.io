@@ -1,48 +1,44 @@
-# dependencies
-/node_modules
-/.pnp
+# Dependencies
+node_modules/
+.pnp
 .pnp.js
 .yarn/install-state.gz
 
-# testing
-/coverage
+# Build outputs
+dist/
+build/
 
-# next.js
-/.next/
-/out/
+# Old Next.js artifacts (can be deleted)
+.next/
+out/
+next-env.d.ts
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
+# Environment files
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env*.local
 
-# debug
+# Debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
 
-# local env files
-.env*.local
-
-# vercel
-.vercel
-
-# typescript
+# TypeScript
 *.tsbuildinfo
-next-env.d.ts
+
+# Testing
+coverage/
 
 # IDE
 .idea/
 .vscode/
 *.swp
 *.swo
+*.sublime-*
 
 # OS generated files
 .DS_Store
@@ -53,9 +49,10 @@ next-env.d.ts
 ehthumbs.db
 Thumbs.db
 
-# Lock files
-yarn.lock
+# Windows reserved names (accidentally created)
+nul
+NUL
 
-public/
-dist/
-*.log 
+# Misc
+*.pem
+*.local
