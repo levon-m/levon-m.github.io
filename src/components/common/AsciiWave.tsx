@@ -16,20 +16,19 @@ function generateWaveLine(
   totalRows: number
 ): string {
   let line = ''
-  const rowPhaseOffset = (rowIndex / totalRows) * Math.PI * 2
+  const rowPhaseOffset = (rowIndex / totalRows) * Math.PI * 1.5
 
   for (let x = 0; x < width; x++) {
-    // Create a tighter audio wave pattern with higher frequency
+    // Create audio wave pattern with wider spacing between cycles
     const waveValue =
-      Math.sin((x / 3) + time + rowPhaseOffset) * 0.7 +
-      Math.sin((x / 1.5) + time * 1.8 + rowPhaseOffset) * 0.5 +
-      Math.sin((x / 4.5) + time * 1.2) * 0.3
+      Math.sin((x / 8) + time + rowPhaseOffset) * 1.0 +
+      Math.sin((x / 4) + time * 1.5 + rowPhaseOffset) * 0.3
 
-    // Normalize to 0-1 range with more pronounced variation
-    const normalized = (waveValue + 1.5) / 3
+    // Normalize with more extreme contrast (more pronounced peaks)
+    const normalized = Math.pow((waveValue + 1.2) / 2.4, 1.5)
 
-    // Map to character index
-    const charIndex = Math.floor(normalized * (WAVE_CHARS.length - 1))
+    // Map to character index with threshold for whitespace
+    const charIndex = normalized < 0.3 ? 0 : Math.floor(normalized * (WAVE_CHARS.length - 1))
     line += WAVE_CHARS[Math.max(0, Math.min(charIndex, WAVE_CHARS.length - 1))]
   }
 

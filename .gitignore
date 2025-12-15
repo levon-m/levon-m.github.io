@@ -13,6 +13,18 @@ build/
 out/
 next-env.d.ts
 
+# Public generated files (build artifacts)
+public/**/*.html
+public/**/*.txt
+public/404/
+public/bio/
+public/contact/
+public/education/
+public/experience/
+public/hello/
+public/music/
+public/projects/
+
 # Environment files
 .env
 .env.local

@@ -2,22 +2,14 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/projects/microloop', label: 'Projects', isDropdown: true },
-  { to: '/voice', label: 'VOICE' },
-  { to: '/contact', label: 'Contact' },
-  { to: '/resume', label: 'Resume' },
-]
-
-const projectLinks = [
-  { to: '/projects/microloop', label: 'MicroLoop' },
-  { to: '/projects/bassmint', label: 'BassMINT' },
-  { to: '/projects/prison-island', label: 'Prison Island' },
+  { to: '/', label: 'Home', internal: true },
+  { to: 'https://github.com/levon-m', label: 'GitHub', internal: false },
+  { to: 'https://linkedin.com/in/levon-melkonyan', label: 'LinkedIn', internal: false },
+  { to: '/resume', label: 'Resume', internal: true },
 ]
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [projectsOpen, setProjectsOpen] = useState(false)
   const location = useLocation()
 
   const isActive = (path: string) => {
@@ -40,43 +32,7 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) =>
-              link.isDropdown ? (
-                <div
-                  key={link.label}
-                  className="relative"
-                  onMouseEnter={() => setProjectsOpen(true)}
-                  onMouseLeave={() => setProjectsOpen(false)}
-                >
-                  <button
-                    className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                      location.pathname.startsWith('/projects')
-                        ? 'text-accent bg-cream/20'
-                        : 'text-surface hover:text-accent hover:bg-cream/10'
-                    }`}
-                  >
-                    {link.label}
-                    <span className="ml-1 text-xs">▾</span>
-                  </button>
-                  {projectsOpen && (
-                    <div className="absolute top-full left-0 mt-1 w-48 bg-cream rounded-md shadow-lg border border-peach/30 py-1">
-                      {projectLinks.map((project) => (
-                        <Link
-                          key={project.to}
-                          to={project.to}
-                          className={`block px-4 py-2 text-sm transition-colors ${
-                            location.pathname === project.to
-                              ? 'text-accent bg-background'
-                              : 'text-surface hover:text-accent hover:bg-background'
-                          }`}
-                        >
-                          <span className="font-mono text-surface-light mr-2">//</span>
-                          {project.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
+              link.internal ? (
                 <Link
                   key={link.to}
                   to={link.to}
@@ -88,6 +44,16 @@ export default function Navbar() {
                 >
                   {link.label}
                 </Link>
+              ) : (
+                <a
+                  key={link.to}
+                  href={link.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 text-sm font-medium rounded-md text-surface hover:text-accent hover:bg-cream/10 transition-colors"
+                >
+                  {link.label}
+                </a>
               )
             )}
           </div>
@@ -127,65 +93,33 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-surface">
             <div className="space-y-1">
-              <Link
-                to="/"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-2 text-base rounded-md ${
-                  isActive('/')
-                    ? 'text-accent bg-cream/20'
-                    : 'text-surface hover:text-accent hover:bg-cream/10'
-                }`}
-              >
-                Home
-              </Link>
-              <div className="px-4 py-2 text-sm text-surface-light font-mono">// Projects</div>
-              {projectLinks.map((project) => (
-                <Link
-                  key={project.to}
-                  to={project.to}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`block pl-8 pr-4 py-2 text-base rounded-md ${
-                    location.pathname === project.to
-                      ? 'text-accent bg-cream/20'
-                      : 'text-surface hover:text-accent hover:bg-cream/10'
-                  }`}
-                >
-                  {project.label}
-                </Link>
-              ))}
-              <Link
-                to="/voice"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-2 text-base rounded-md ${
-                  isActive('/voice')
-                    ? 'text-accent bg-cream/20'
-                    : 'text-surface hover:text-accent hover:bg-cream/10'
-                }`}
-              >
-                VOICE
-              </Link>
-              <Link
-                to="/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-2 text-base rounded-md ${
-                  isActive('/contact')
-                    ? 'text-accent bg-cream/20'
-                    : 'text-surface hover:text-accent hover:bg-cream/10'
-                }`}
-              >
-                Contact
-              </Link>
-              <Link
-                to="/resume"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-2 text-base rounded-md ${
-                  isActive('/resume')
-                    ? 'text-accent bg-cream/20'
-                    : 'text-surface hover:text-accent hover:bg-cream/10'
-                }`}
-              >
-                Resume
-              </Link>
+              {navLinks.map((link) =>
+                link.internal ? (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block px-4 py-2 text-base rounded-md ${
+                      isActive(link.to)
+                        ? 'text-accent bg-cream/20'
+                        : 'text-surface hover:text-accent hover:bg-cream/10'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.to}
+                    href={link.to}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-2 text-base rounded-md text-surface hover:text-accent hover:bg-cream/10 transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
             </div>
           </div>
         )}

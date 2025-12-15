@@ -161,16 +161,6 @@ export const homeNavItems: NavItem[] = [
     to: '/projects/prison-island',
   },
   {
-    title: 'Contact',
-    subtitle: 'Get in touch or find me online',
-    to: '/contact',
-  },
-  {
-    title: 'Resume',
-    subtitle: 'Experience, skills, and education',
-    to: '/resume',
-  },
-  {
     title: 'Links',
     subtitle: 'Inspiration, resources, and favorites',
     to: '/links',

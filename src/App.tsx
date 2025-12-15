@@ -11,9 +11,9 @@ import LinksPage from './routes/LinksPage'
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-surface flex flex-col">
+    <div className="h-screen bg-background text-surface flex flex-col overflow-hidden">
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 overflow-y-auto">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects/microloop" element={<MicroLoopPage />} />

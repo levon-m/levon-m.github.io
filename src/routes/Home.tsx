@@ -4,11 +4,11 @@ import { homeNavItems } from '../data/projects'
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="h-full overflow-hidden">
       {/* Hero Section */}
       <section className="relative py-8 overflow-hidden">
         {/* ASCII Wave Background */}
-        <AsciiWave rows={8} speed={0.02} opacity={0.2} />
+        <AsciiWave rows={8} speed={0.02} opacity={0.25} />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Name & Title */}
@@ -34,55 +34,27 @@ export default function Home() {
             exploring real-time audio processing on embedded platforms and creating
             tools that make practicing and performing more engaging.
           </p>
-
-          {/* Quick Links */}
-          <div className="mt-4 flex flex-wrap gap-3 opacity-0 animate-slide-up animate-delay-400">
-            <a
-              href="https://github.com/levon-m"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:text-accent-dark transition-colors text-sm underline"
-            >
-              GitHub
-            </a>
-            <span className="text-surface-light">•</span>
-            <a
-              href="https://linkedin.com/in/levon-melkonyan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:text-accent-dark transition-colors text-sm underline"
-            >
-              LinkedIn
-            </a>
-            <span className="text-surface-light">•</span>
-            <Link
-              to="/resume"
-              className="text-accent hover:text-accent-dark transition-colors text-sm underline"
-            >
-              Resume
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* Navigation Stack */}
-      <section className="py-4">
+      <section className="py-6">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="space-y-2" aria-label="Main navigation">
+          <nav className="space-y-3" aria-label="Main navigation">
             {homeNavItems.map((item, index) => (
               <Link
                 key={item.to}
                 to={item.to}
                 className="group block text-accent hover:text-accent-dark transition-colors
-                          opacity-0 animate-slide-up text-sm"
+                          opacity-0 animate-slide-up text-lg"
                 style={{
-                  animationDelay: `${500 + index * 80}ms`,
+                  animationDelay: `${400 + index * 80}ms`,
                   animationFillMode: 'forwards',
                 }}
               >
-                <span className="font-mono text-xs text-surface-light mr-2">→</span>
+                <span className="font-mono text-sm text-surface-light mr-3">→</span>
                 {item.title}
-                <span className="text-surface-light text-xs ml-2">({item.subtitle})</span>
+                <span className="text-surface-light text-sm ml-3">({item.subtitle})</span>
               </Link>
             ))}
           </nav>
