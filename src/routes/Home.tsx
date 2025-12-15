@@ -24,14 +24,13 @@ export default function Home() {
 
           {/* Tagline */}
           <p className="mt-2 text-lg sm:text-xl text-surface-light font-light opacity-0 animate-slide-up animate-delay-200">
-            Embedded audio & DSP engineer, bass player, and music-tech tinkerer.
+            Embedded audio software engineer, bass player, and music tech enthusiast.
           </p>
 
           {/* Description */}
           <p className="mt-3 text-surface max-w-2xl text-base opacity-0 animate-slide-up animate-delay-300">
-            I build things at the intersection of music and technology—from hardware
-            loopers and pitch detection systems to interactive experiences. Currently
-            exploring real-time audio processing on embedded platforms and creating
+            I love the intersection of music and technology, as well as hardware and software.
+            Currently exploring real-time audio processing on embedded platforms and creating
             tools that make practicing and performing more engaging.
           </p>
         </div>
