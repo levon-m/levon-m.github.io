@@ -10,7 +10,7 @@ export default function LinksPage() {
 
   return (
     <div className="py-12 sm:py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-8 sm:px-12 lg:px-16">
         <PageHeader
           title="Inspiration & Links"
           subtitle="Resources, artists, and tools that inspire my work"

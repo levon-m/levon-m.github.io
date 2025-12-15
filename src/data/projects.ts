@@ -28,7 +28,7 @@ export const projects: Project[] = [
     and freeze functionality with tight MIDI clock synchronization. The project explores the intersection
     of embedded systems and creative audio tools, pushing the limits of what's achievable with
     resource-constrained hardware.`,
-    tags: ['embedded', 'audio', 'hardware', 'c++'],
+    tags: ['C++17', 'Teensy 4.1', 'DSP', 'RTOS'],
     stack: [
       'Teensy 4.1',
       'Teensy Audio Library',
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     hardware sensors with a JUCE-based desktop application. Using optical sensors on the fretboard,
     it provides real-time feedback on finger placement, pitch accuracy, and technique. The system
     aims to make practicing more engaging through visual feedback and gamified exercises.`,
-    tags: ['music-tech', 'juce', 'audio', 'hardware'],
+    tags: ['C++17', 'Teensy 4.0', 'DSP', 'JUCE'],
     stack: [
       'JUCE Framework',
       'C++',
@@ -93,15 +93,15 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'prison-island',
-    slug: 'prison-island',
-    name: 'Prison Island',
+    id: 'delivery-mayhem',
+    slug: 'delivery-mayhem',
+    name: 'Delivery Mayhem',
     shortDescription: 'Interactive escape room experience',
     fullDescription: `Prison Island is an interactive narrative escape room experience developed
     during a study abroad program. The project combines physical puzzles, digital interfaces, and
     storytelling to create an immersive gameplay experience. Players work together to solve
     challenges and uncover the story behind a mysterious island prison.`,
-    tags: ['game-design', 'interactive', 'ux'],
+    tags: ['C++', 'Arduino'],
     stack: [
       'Unity',
       'Arduino',
@@ -156,9 +156,9 @@ export const homeNavItems: NavItem[] = [
     to: '/voice',
   },
   {
-    title: 'Prison Island',
+    title: 'Delivery Mayhem',
     subtitle: 'Interactive escape room experience',
-    to: '/prison-island',
+    to: '/delivery-mayhem',
   },
   {
     title: 'Links',

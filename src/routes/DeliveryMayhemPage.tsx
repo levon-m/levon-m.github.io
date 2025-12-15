@@ -1,8 +1,8 @@
 import { PageHeader } from '../components/common/SectionTitle'
 import { getProjectBySlug } from '../data/projects'
 
-export default function PrisonIslandPage() {
-  const project = getProjectBySlug('prison-island')
+export default function DeliveryMayhemPage() {
+  const project = getProjectBySlug('delivery-mayhem')
 
   if (!project) {
     return <div>Project not found</div>
@@ -10,7 +10,7 @@ export default function PrisonIslandPage() {
 
   return (
     <div className="py-12 sm:py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-8 sm:px-12 lg:px-16">
         <PageHeader
           title={project.name}
           subtitle="Interactive Escape Room Experience"

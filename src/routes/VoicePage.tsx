@@ -3,7 +3,7 @@ import { PageHeader } from '../components/common/SectionTitle'
 export default function VoicePage() {
   return (
     <div className="py-12 sm:py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-8 sm:px-12 lg:px-16">
         <PageHeader
           title="VOICE"
           subtitle="Media, Privacy & Social Justice"
@@ -13,7 +13,7 @@ export default function VoicePage() {
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-8 opacity-0 animate-fade-in animate-delay-100">
-          {['computer-vision', 'privacy', 'social-justice', 'python'].map((tag) => (
+          {['C++', 'ESP32', 'Python', 'OpenCV', 'PyTorch'].map((tag) => (
             <span
               key={tag}
               className="px-3 py-1 bg-cream/50 text-surface text-sm rounded-full font-mono"
