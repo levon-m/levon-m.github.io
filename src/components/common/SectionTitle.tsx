@@ -42,29 +42,17 @@ export function PageHeader({
   backLabel = 'Back',
 }: PageHeaderProps) {
   return (
-    <div className="mb-12">
+    <div className="mb-16">
       <a
         href={backTo}
-        className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-accent transition-colors mb-6 group"
+        className="underline text-accent hover:italic text-lg mb-8 inline-block"
       >
-        <svg
-          className="h-4 w-4 group-hover:-translate-x-1 transition-transform"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-        <span className="font-mono">{backLabel}</span>
+        &lt;- {backLabel}
       </a>
-      <SectionTitle as="h1" subtitle={subtitle}>
+      <h1 className="text-5xl sm:text-6xl font-bold text-surface mb-4">
         {title}
-      </SectionTitle>
+      </h1>
+      {subtitle && <p className="text-surface text-lg leading-relaxed">{subtitle}</p>}
     </div>
   )
 }

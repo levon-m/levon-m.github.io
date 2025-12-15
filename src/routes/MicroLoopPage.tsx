@@ -9,8 +9,8 @@ export default function MicroLoopPage() {
   }
 
   return (
-    <div className="py-12 sm:py-20">
-      <div className="max-w-4xl mx-auto px-8 sm:px-12 lg:px-16">
+    <div className="min-h-screen py-12 px-8 sm:px-12 lg:px-16">
+      <div className="max-w-5xl mx-auto">
         <PageHeader
           title={project.name}
           subtitle={project.shortDescription}
@@ -19,7 +19,7 @@ export default function MicroLoopPage() {
         />
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-8 opacity-0 animate-fade-in animate-delay-100">
+        <div className="flex flex-wrap gap-2 mb-16">
           {project.tags.map((tag) => (
             <span
               key={tag}
@@ -31,26 +31,17 @@ export default function MicroLoopPage() {
         </div>
 
         {/* Overview */}
-        <section className="mb-12 opacity-0 animate-slide-up animate-delay-200">
-          <h2 className="text-xl font-semibold text-surface mb-4">
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-surface mb-6">
             Overview
           </h2>
-          <div className="bg-accent/10 rounded-lg p-6">
-            <p className="text-gray-300 leading-relaxed whitespace-pre-line">
+          <div className="text-surface space-y-5 text-lg leading-relaxed">
+            <p className="whitespace-pre-line">
               {project.fullDescription}
             </p>
-          </div>
-        </section>
-
-        {/* Technical Highlights */}
-        <section className="mb-12 opacity-0 animate-slide-up animate-delay-300">
-          <h2 className="text-xl font-semibold text-surface mb-4">
-            Technical Highlights
-          </h2>
-          <div className="bg-accent/10 rounded-lg p-6">
-            <ul className="space-y-3">
+            <ul className="space-y-3 list-disc pl-6">
               {project.highlights.map((highlight, index) => (
-                <li key={index} className="text-gray-300">
+                <li key={index}>
                   {highlight}
                 </li>
               ))}
@@ -58,99 +49,53 @@ export default function MicroLoopPage() {
           </div>
         </section>
 
-        {/* Media Placeholder */}
-        <section className="mb-12 opacity-0 animate-slide-up animate-delay-400">
-          <h2 className="text-xl font-semibold text-surface mb-4">
+        {/* Media */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-surface mb-6">
             Media
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* CUSTOMIZE: Replace with actual images */}
-            <div className="aspect-video bg-surface rounded-lg border border-gray-800 flex items-center justify-center">
-              <span className="text-gray-500 font-mono text-sm">
+            <div className="aspect-video bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
+              <span className="text-surface-light font-mono text-sm">
                 [image: microloop-front.jpg]
               </span>
             </div>
-            <div className="aspect-video bg-surface rounded-lg border border-gray-800 flex items-center justify-center">
-              <span className="text-gray-500 font-mono text-sm">
+            <div className="aspect-video bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
+              <span className="text-surface-light font-mono text-sm">
                 [image: microloop-pcb.jpg]
               </span>
-            </div>
-          </div>
-
-          {/* Video Embed Placeholder */}
-          {project.links.video && (
-            <div className="mt-4 aspect-video bg-surface rounded-lg border border-gray-800 flex items-center justify-center">
-              <div className="text-center">
-                <span className="text-gray-500 font-mono text-sm block mb-2">
-                  [YouTube embed placeholder]
-                </span>
-                <a
-                  href={project.links.video}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent text-sm"
-                >
-                  Watch on YouTube →
-                </a>
-              </div>
-            </div>
-          )}
-        </section>
-
-        {/* Project Details */}
-        <section className="mb-12 opacity-0 animate-slide-up animate-delay-500">
-          <h2 className="text-xl font-semibold text-surface mb-4">
-            Tech Stack
-          </h2>
-          <div className="bg-accent/10 rounded-lg p-6">
-            <div className="flex flex-wrap gap-2">
-              {project.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-surface-dark rounded text-sm text-gray-300 border border-gray-700"
-                >
-                  {tech}
-                </span>
-              ))}
             </div>
           </div>
         </section>
 
         {/* Links */}
-        <section className="opacity-0 animate-slide-up animate-delay-600">
-          <h2 className="text-xl font-semibold text-surface mb-4">
+        <section>
+          <h2 className="text-2xl font-bold text-surface mb-6">
             Links
           </h2>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3 items-center">
             {project.links.github && (
               <a
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="no-underline inline-flex items-center gap-2 px-4 py-2 bg-surface rounded-md text-gray-300 hover:text-white hover:bg-surface-light border border-gray-800 hover:border-gray-700 transition-colors"
+                className="underline text-accent hover:italic"
               >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    fillRule="evenodd"
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                View on GitHub
+                GitHub
               </a>
             )}
             {project.links.video && (
-              <a
-                href={project.links.video}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="no-underline inline-flex items-center gap-2 px-4 py-2 bg-surface rounded-md text-gray-300 hover:text-white hover:bg-surface-light border border-gray-800 hover:border-gray-700 transition-colors"
-              >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                </svg>
-                Watch Demo
-              </a>
+              <>
+                <span className="text-surface">•</span>
+                <a
+                  href={project.links.video}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-accent hover:italic"
+                >
+                  Demo
+                </a>
+              </>
             )}
           </div>
         </section>
