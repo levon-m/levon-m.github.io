@@ -4,7 +4,7 @@ import MicroLoopPage from './routes/MicroLoopPage'
 import BassMINTPage from './routes/BassMINTPage'
 import VoicePage from './routes/VoicePage'
 import DeliveryMayhemPage from './routes/DeliveryMayhemPage'
-import LinksPage from './routes/LinksPage'
+import BookmarksPage from './routes/BookmarksPage'
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route path="/bassmint" element={<BassMINTPage />} />
           <Route path="/delivery-mayhem" element={<DeliveryMayhemPage />} />
           <Route path="/voice" element={<VoicePage />} />
-          <Route path="/links" element={<LinksPage />} />
+          <Route path="/bookmarks" element={<BookmarksPage />} />
         </Routes>
       </main>
     </div>

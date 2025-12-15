@@ -24,10 +24,10 @@ export default function Home() {
               Hello! I'm an embedded software developer based in Los Angeles, CA.
             </p>
             <p>
-              I studied Computer Science at <a href="https://www.calpoly.edu/" target="_blank" rel="noopener noreferrer" className="text-accent">Cal Poly SLO</a>, and have since been developing real-time aerospace applications at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="text-accent">CK Technologies, Inc.</a>
+              I studied Computer Science at <a href="https://www.calpoly.edu/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Cal Poly SLO</a>, and have since been developing real-time aerospace applications at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a>
             </p>
             <p>
-              At heart, I am a bass player and music producer, and nothing excites me more than the intersection of sound and technology. In my free time, I am developing software and hardware for live music performance and music theory practice, particularly with the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="text-accent">Teensy</a> platform.
+              At heart, I am a bass player and music producer, and nothing excites me more than the intersection of sound and technology. In my free time, I develop software and hardware for live music performance and music theory practice, particularly with the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy</a> platform.
             </p>
 
             {/* Links */}
@@ -60,7 +60,7 @@ export default function Home() {
               </a>
               <span className="text-surface">•</span>
               <a
-                href="mailto:levonmelkonyan@gmail.com"
+                href="mailto:levon.melkonyan.cs@gmail.com"
                 className="underline text-accent hover:italic"
               >
                 Email
@@ -71,20 +71,28 @@ export default function Home() {
 
         {/* Projects Section */}
         <section className="space-y-8">
+          <h2 className="text-3xl font-bold text-surface">
+            What else have I worked on?
+          </h2>
           {homeNavItems.map((item, index) => {
             const isImageLeft = index % 2 === 0
             const tags = projectTags[item.to] || []
 
-            // Skip the Links page from projects
-            if (item.to === '/links') {
+            // Skip the Bookmarks page from projects
+            if (item.to === '/bookmarks') {
               return (
-                <div key={item.to} className="text-surface-light text-lg leading-relaxed max-w-3xl">
-                  <p>
-                    Take a look at my <Link to={item.to} className="text-accent">bookmarks</Link> for a collection of some of my favorite mixed media, and things I generally find interesting.
-                  </p>
-                  <p className="mt-2">
-                    I hope something here resonates with you too!
-                  </p>
+                <div key={item.to}>
+                  <h2 className="text-3xl font-bold text-surface mb-6">
+                    Bookmarks
+                  </h2>
+                  <div className="text-surface text-lg leading-relaxed max-w-3xl">
+                    <p>
+                      Take a look at my <Link to={item.to} className="underline text-accent hover:italic">bookmarks</Link> for a collection of some of my favorite mixed media, and things I generally find interesting.
+                    </p>
+                    <p className="mt-2">
+                      I hope something here resonates with you too!
+                    </p>
+                  </div>
                 </div>
               )
             }
@@ -96,10 +104,10 @@ export default function Home() {
                 className="block group no-underline"
                 onClick={() => window.scrollTo(0, 0)}
               >
-                <div className="relative bg-accent/10 rounded-2xl p-6 hover:bg-accent/30 transition-none">
-                  <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 items-center`}>
+                <div className="relative bg-accent/10 rounded-2xl p-5 hover:bg-accent/30 transition-none">
+                  <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-5 items-center`}>
                     {/* Image Placeholder */}
-                    <div className="w-full md:w-1/2 aspect-[4/3] bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
+                    <div className="w-full md:w-1/2 aspect-[16/9] bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
                       <span className="text-surface-light font-mono text-sm">
                         [Project Image]
                       </span>

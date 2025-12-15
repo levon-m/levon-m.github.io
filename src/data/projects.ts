@@ -161,8 +161,8 @@ export const homeNavItems: NavItem[] = [
     to: '/delivery-mayhem',
   },
   {
-    title: 'Links',
+    title: 'Bookmarks',
     subtitle: 'Inspiration, resources, and favorites',
-    to: '/links',
+    to: '/bookmarks',
   },
 ]
