@@ -1,5 +1,4 @@
 import { PageHeader } from '../components/common/SectionTitle'
-import Card from '../components/common/Card'
 
 export default function VoicePage() {
   return (

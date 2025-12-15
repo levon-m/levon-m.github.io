@@ -5,7 +5,6 @@ interface SectionTitleProps {
   subtitle?: string
   className?: string
   as?: 'h1' | 'h2' | 'h3'
-  decorated?: boolean
 }
 
 export default function SectionTitle({
@@ -13,7 +12,6 @@ export default function SectionTitle({
   subtitle,
   className = '',
   as: Tag = 'h2',
-  decorated = true,
 }: SectionTitleProps) {
   const sizeClasses = {
     h1: 'text-4xl sm:text-5xl',

@@ -1,5 +1,4 @@
 import { PageHeader } from '../components/common/SectionTitle'
-import Card from '../components/common/Card'
 import { getProjectBySlug } from '../data/projects'
 
 export default function PrisonIslandPage() {
