@@ -1,7 +1,5 @@
 import { PageHeader } from '../components/common/SectionTitle'
-import { LinkCard } from '../components/common/Card'
 import {
-  inspirationItems,
   categoryLabels,
   InspirationItem,
 } from '../data/inspiration'
@@ -9,11 +7,6 @@ import {
 export default function LinksPage() {
   // Group items by category
   const categories = Object.keys(categoryLabels) as InspirationItem['category'][]
-
-  const groupedItems = categories.reduce((acc, category) => {
-    acc[category] = inspirationItems.filter((item) => item.category === category)
-    return acc
-  }, {} as Record<InspirationItem['category'], InspirationItem[]>)
 
   return (
     <div className="py-12 sm:py-20">
@@ -36,9 +29,6 @@ export default function LinksPage() {
 
         {/* Categories */}
         {categories.map((category, categoryIndex) => {
-          const items = groupedItems[category]
-          if (items.length === 0) return null
-
           return (
             <section
               key={category}
@@ -48,19 +38,15 @@ export default function LinksPage() {
                 animationFillMode: 'forwards',
               }}
             >
-              <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-                <span className="font-mono text-gray-500">//</span>{' '}
+              <h2 className="text-xl font-semibold text-surface mb-6">
                 {categoryLabels[category]}
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {items.map((item) => (
-                  <LinkCard
-                    key={item.id}
-                    title={item.title}
-                    description={item.description}
-                    url={item.url}
-                  />
-                ))}
+              <div className="bg-accent/10 rounded-lg p-6">
+                <ul className="space-y-2">
+                  <li className="text-gray-300">[Link placeholder]</li>
+                  <li className="text-gray-300">[Link placeholder]</li>
+                  <li className="text-gray-300">[Link placeholder]</li>
+                </ul>
               </div>
             </section>
           )
@@ -69,12 +55,9 @@ export default function LinksPage() {
         {/* Add Your Own */}
         <section className="mt-16 pt-8 border-t border-gray-800">
           <div className="text-center">
-            <p className="text-gray-500 font-mono text-sm mb-2">
-              {'// want to suggest something?'}
-            </p>
             <a
               href="/contact"
-              className="text-accent hover:text-accent-light transition-colors"
+              className="text-accent transition-colors"
             >
               Send me a recommendation →
             </a>

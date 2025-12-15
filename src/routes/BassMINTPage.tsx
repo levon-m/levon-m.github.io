@@ -24,89 +24,76 @@ export default function BassMINTPage() {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 bg-surface rounded-full text-sm text-accent font-mono"
+              className="px-3 py-1 bg-cream/50 text-surface text-sm rounded-full font-mono"
             >
-              #{tag}
+              {tag}
             </span>
           ))}
         </div>
 
         {/* Overview */}
         <section className="mb-12 opacity-0 animate-slide-up animate-delay-200">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> Overview
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            Overview
           </h2>
-          <Card>
+          <div className="bg-accent/10 rounded-lg p-6">
             <p className="text-gray-300 leading-relaxed whitespace-pre-line">
               {project.fullDescription}
             </p>
-          </Card>
+          </div>
         </section>
 
         {/* Technical Highlights */}
         <section className="mb-12 opacity-0 animate-slide-up animate-delay-300">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> Technical Highlights
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            Technical Highlights
           </h2>
-          <Card>
+          <div className="bg-accent/10 rounded-lg p-6">
             <ul className="space-y-3">
               {project.highlights.map((highlight, index) => (
-                <li key={index} className="flex items-start gap-3 text-gray-300">
-                  <span className="text-accent font-mono mt-1">{'>'}</span>
-                  <span>{highlight}</span>
+                <li key={index} className="text-gray-300">
+                  {highlight}
                 </li>
               ))}
             </ul>
-          </Card>
+          </div>
         </section>
 
         {/* Use Cases */}
         <section className="mb-12 opacity-0 animate-slide-up animate-delay-400">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> Use Cases
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            Use Cases
           </h2>
-          <Card>
+          <div className="bg-accent/10 rounded-lg p-6">
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  <strong className="text-white">Scale Practice:</strong> Visual
-                  feedback shows which notes you're hitting and helps you navigate
-                  patterns across the fretboard
-                </span>
+              <li className="text-gray-300">
+                <strong className="text-white">Scale Practice:</strong> Visual
+                feedback shows which notes you're hitting and helps you navigate
+                patterns across the fretboard
               </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  <strong className="text-white">Fretboard Visualization:</strong>{' '}
-                  See your finger positions in real-time, helping build muscle
-                  memory for positions and intervals
-                </span>
+              <li className="text-gray-300">
+                <strong className="text-white">Fretboard Visualization:</strong>{' '}
+                See your finger positions in real-time, helping build muscle
+                memory for positions and intervals
               </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  <strong className="text-white">Interactive Exercises:</strong>{' '}
-                  Gamified practice modes that make repetitive exercises more
-                  engaging
-                </span>
+              <li className="text-gray-300">
+                <strong className="text-white">Interactive Exercises:</strong>{' '}
+                Gamified practice modes that make repetitive exercises more
+                engaging
               </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  <strong className="text-white">Technique Analysis:</strong> Track
-                  timing accuracy and note consistency to identify areas for
-                  improvement
-                </span>
+              <li className="text-gray-300">
+                <strong className="text-white">Technique Analysis:</strong> Track
+                timing accuracy and note consistency to identify areas for
+                improvement
               </li>
             </ul>
-          </Card>
+          </div>
         </section>
 
         {/* Media Placeholder */}
         <section className="mb-12 opacity-0 animate-slide-up animate-delay-500">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> Media
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            Media
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* CUSTOMIZE: Replace with actual images */}
@@ -125,10 +112,10 @@ export default function BassMINTPage() {
 
         {/* Tech Stack */}
         <section className="mb-12 opacity-0 animate-slide-up animate-delay-600">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> Tech Stack
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            Tech Stack
           </h2>
-          <Card>
+          <div className="bg-accent/10 rounded-lg p-6">
             <div className="flex flex-wrap gap-2">
               {project.stack.map((tech) => (
                 <span
@@ -139,13 +126,13 @@ export default function BassMINTPage() {
                 </span>
               ))}
             </div>
-          </Card>
+          </div>
         </section>
 
         {/* Links */}
         <section className="opacity-0 animate-slide-up animate-delay-700">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> Links
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            Links
           </h2>
           <div className="flex flex-wrap gap-4">
             {project.links.github && (

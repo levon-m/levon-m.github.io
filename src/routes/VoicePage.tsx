@@ -17,19 +17,19 @@ export default function VoicePage() {
           {['computer-vision', 'privacy', 'social-justice', 'python'].map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 bg-surface rounded-full text-sm text-accent font-mono"
+              className="px-3 py-1 bg-cream/50 text-surface text-sm rounded-full font-mono"
             >
-              #{tag}
+              {tag}
             </span>
           ))}
         </div>
 
         {/* What is VOICE */}
         <section className="mb-12 opacity-0 animate-slide-up animate-delay-200">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> What is VOICE?
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            What is VOICE?
           </h2>
-          <Card>
+          <div className="bg-accent/10 rounded-lg p-6">
             <p className="text-gray-300 leading-relaxed">
               {/* CUSTOMIZE: Update with accurate project description */}
               VOICE is a media archiving and analysis platform designed to support lawyers,
@@ -45,99 +45,72 @@ export default function VoicePage() {
               techniques, VOICE enables researchers and advocates to work with sensitive
               media responsibly.
             </p>
-          </Card>
+          </div>
         </section>
 
         {/* My Role */}
         <section className="mb-12 opacity-0 animate-slide-up animate-delay-300">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> My Role
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            My Role
           </h2>
-          <Card>
+          <div className="bg-accent/10 rounded-lg p-6">
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  Built the computer vision pipeline using <strong className="text-white">OpenCV</strong> and{' '}
-                  <strong className="text-white">YOLOv8</strong> for object detection and tracking
-                </span>
+              <li className="text-gray-300">
+                Built the computer vision pipeline using <strong className="text-white">OpenCV</strong> and{' '}
+                <strong className="text-white">YOLOv8</strong> for object detection and tracking
               </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  Implemented automated <strong className="text-white">face detection and blurring</strong> to
-                  protect identities while preserving contextual information
-                </span>
+              <li className="text-gray-300">
+                Implemented automated <strong className="text-white">face detection and blurring</strong> to
+                protect identities while preserving contextual information
               </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  Developed the backend infrastructure using <strong className="text-white">Flask</strong>,{' '}
-                  <strong className="text-white">MongoDB</strong>, and <strong className="text-white">AWS S3</strong> for
-                  secure media storage and retrieval
-                </span>
+              <li className="text-gray-300">
+                Developed the backend infrastructure using <strong className="text-white">Flask</strong>,{' '}
+                <strong className="text-white">MongoDB</strong>, and <strong className="text-white">AWS S3</strong> for
+                secure media storage and retrieval
               </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  Collaborated with lawyers and activists to align technical implementation with
-                  ethical constraints and real-world needs
-                </span>
+              <li className="text-gray-300">
+                Collaborated with lawyers and activists to align technical implementation with
+                ethical constraints and real-world needs
               </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  Worked on mapping and visualization features to help researchers understand
-                  spatial patterns in protest documentation
-                </span>
+              <li className="text-gray-300">
+                Worked on mapping and visualization features to help researchers understand
+                spatial patterns in protest documentation
               </li>
             </ul>
-          </Card>
+          </div>
         </section>
 
         {/* Impact */}
         <section className="mb-12 opacity-0 animate-slide-up animate-delay-400">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> Impact
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            Impact
           </h2>
-          <Card>
+          <div className="bg-accent/10 rounded-lg p-6">
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  Enables journalists and researchers to preserve documentation while
-                  minimizing risk to individuals
-                </span>
+              <li className="text-gray-300">
+                Enables journalists and researchers to preserve documentation while
+                minimizing risk to individuals
               </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  Supports legal teams in organizing and analyzing video evidence for
-                  civil rights cases
-                </span>
+              <li className="text-gray-300">
+                Supports legal teams in organizing and analyzing video evidence for
+                civil rights cases
               </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  Contributes to the broader conversation about responsible technology
-                  in social justice contexts
-                </span>
+              <li className="text-gray-300">
+                Contributes to the broader conversation about responsible technology
+                in social justice contexts
               </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="text-accent font-mono mt-1">{'>'}</span>
-                <span>
-                  Addresses misinformation by providing tools for verifying and
-                  contextualizing media content
-                </span>
+              <li className="text-gray-300">
+                Addresses misinformation by providing tools for verifying and
+                contextualizing media content
               </li>
             </ul>
-          </Card>
+          </div>
         </section>
 
         {/* Media Placeholder */}
         <section className="mb-12 opacity-0 animate-slide-up animate-delay-500">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> Media
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            Media
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* CUSTOMIZE: Replace with actual screenshots or diagrams */}
@@ -156,10 +129,10 @@ export default function VoicePage() {
 
         {/* Tech Stack */}
         <section className="mb-12 opacity-0 animate-slide-up animate-delay-600">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> Tech Stack
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            Tech Stack
           </h2>
-          <Card>
+          <div className="bg-accent/10 rounded-lg p-6">
             <div className="flex flex-wrap gap-2">
               {[
                 'Python',
@@ -179,13 +152,13 @@ export default function VoicePage() {
                 </span>
               ))}
             </div>
-          </Card>
+          </div>
         </section>
 
         {/* Links */}
         <section className="opacity-0 animate-slide-up animate-delay-700">
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            <span className="font-mono text-gray-500">//</span> Links
+          <h2 className="text-xl font-semibold text-surface mb-4">
+            Links
           </h2>
           <div className="flex flex-wrap gap-4">
             {/* CUSTOMIZE: Add actual project links */}

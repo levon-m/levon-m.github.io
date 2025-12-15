@@ -23,15 +23,7 @@ export default function SectionTitle({
 
   return (
     <div className={`mb-8 ${className}`}>
-      {decorated && (
-        <span className="font-mono text-sm text-accent mb-2 block">
-          {'// '}
-          {typeof children === 'string'
-            ? children.toLowerCase().replace(/\s+/g, '_')
-            : 'section'}
-        </span>
-      )}
-      <Tag className={`font-bold text-white ${sizeClasses[Tag]}`}>{children}</Tag>
+      <Tag className={`font-bold text-surface ${sizeClasses[Tag]}`}>{children}</Tag>
       {subtitle && <p className="mt-2 text-gray-400 max-w-2xl">{subtitle}</p>}
     </div>
   )

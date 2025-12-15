@@ -10,24 +10,24 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen py-16 px-6 sm:px-8 lg:px-12">
+      <div className="max-w-5xl mx-auto">
         {/* Header Section */}
-        <section className="mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-surface mb-6">
+        <section className="mb-20">
+          <h1 className="text-5xl sm:text-6xl font-bold text-surface mb-8">
             Levon Melkonyan
           </h1>
 
           {/* Bio */}
-          <div className="text-surface space-y-4 text-base leading-relaxed max-w-2xl">
+          <div className="text-surface space-y-5 text-lg leading-relaxed max-w-3xl">
             <p>
               Hello! I'm an embedded software developer based in Los Angeles, CA.
             </p>
             <p>
-              I studied Computer Science at Cal Poly SLO, and have since been developing real-time aerospace applications at CK Technologies, Inc.
+              I studied Computer Science at <a href="https://www.calpoly.edu/" target="_blank" rel="noopener noreferrer" className="text-accent">Cal Poly SLO</a>, and have since been developing real-time aerospace applications at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="text-accent">CK Technologies, Inc.</a>
             </p>
             <p>
-              At heart, I am a bass player and music producer, and nothing excites me more than the intersection of sound and technology. In my free time, I am developing software and hardware for live music performance and music theory practice, particularly with the Teensy platform.
+              At heart, I am a bass player and music producer, and nothing excites me more than the intersection of sound and technology. In my free time, I am developing software and hardware for live music performance and music theory practice, particularly with the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="text-accent">Teensy</a> platform.
             </p>
 
             {/* Links */}
@@ -36,7 +36,7 @@ export default function Home() {
                 href="/assets/Levon_Melkonyan_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent underline hover:italic"
+                className="no-underline text-accent hover:italic"
               >
                 CV
               </a>
@@ -44,7 +44,7 @@ export default function Home() {
                 href="https://github.com/levon-m"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent underline hover:italic"
+                className="no-underline text-accent hover:italic"
               >
                 GitHub
               </a>
@@ -52,13 +52,13 @@ export default function Home() {
                 href="https://www.linkedin.com/in/levonmelkonyan/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent underline hover:italic"
+                className="no-underline text-accent hover:italic"
               >
                 LinkedIn
               </a>
               <a
                 href="mailto:levonmelkonyan@gmail.com"
-                className="text-accent underline hover:italic"
+                className="no-underline text-accent hover:italic"
               >
                 Email
               </a>
@@ -75,13 +75,14 @@ export default function Home() {
             // Skip the Links page from projects
             if (item.to === '/links') {
               return (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className="block text-accent underline hover:italic text-xl"
-                >
-                  {item.title} - {item.subtitle}
-                </Link>
+                <div key={item.to} className="text-surface-light text-lg leading-relaxed max-w-3xl">
+                  <p>
+                    Take a look at my <Link to={item.to} className="text-accent">bookmarks</Link> for a collection of some of my favorite mixed media, and things I generally find interesting.
+                  </p>
+                  <p className="mt-2">
+                    I hope something here resonates with you as well!
+                  </p>
+                </div>
               )
             }
 
@@ -90,22 +91,23 @@ export default function Home() {
                 key={item.to}
                 to={item.to}
                 className="block group no-underline"
+                onClick={() => window.scrollTo(0, 0)}
               >
-                <div className="relative bg-accent/10 rounded-2xl p-8 hover:bg-accent/15 transition-colors">
-                  <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}>
+                <div className="relative bg-accent/10 rounded-2xl p-10 hover:bg-accent/15 transition-colors">
+                  <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-10 items-center`}>
                     {/* Image Placeholder */}
-                    <div className="w-full md:w-1/2 aspect-video bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
+                    <div className="w-full md:w-1/2 aspect-[4/3] bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
                       <span className="text-surface-light font-mono text-sm">
                         [Project Image]
                       </span>
                     </div>
 
                     {/* Project Info */}
-                    <div className="w-full md:w-1/2 space-y-3">
-                      <h2 className="text-2xl font-bold text-surface group-hover:italic transition-all">
+                    <div className="w-full md:w-1/2 space-y-4">
+                      <h2 className="text-3xl font-bold text-surface group-hover:italic">
                         {item.title}
                       </h2>
-                      <p className="text-surface-light">
+                      <p className="text-surface-light text-lg">
                         {item.subtitle}
                       </p>
 
