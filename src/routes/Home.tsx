@@ -4,9 +4,9 @@ import { homeNavItems } from '../data/projects'
 
 export default function Home() {
   return (
-    <div className="h-full overflow-hidden">
+    <div className="h-full overflow-hidden flex flex-col">
       {/* Hero Section */}
-      <section className="relative py-8 overflow-hidden">
+      <section className="relative py-6 overflow-hidden">
         {/* ASCII Wave Background */}
         <AsciiWave rows={8} speed={0.02} opacity={0.25} />
 
@@ -38,23 +38,23 @@ export default function Home() {
       </section>
 
       {/* Navigation Stack */}
-      <section className="py-6">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="space-y-3" aria-label="Main navigation">
+      <section className="py-8 flex-1 flex items-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <nav className="space-y-6" aria-label="Main navigation">
             {homeNavItems.map((item, index) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className="group block text-accent hover:text-accent-dark transition-colors
-                          opacity-0 animate-slide-up text-lg"
+                className="group block text-accent hover:italic transition-all
+                          opacity-0 animate-slide-up text-3xl leading-relaxed"
                 style={{
                   animationDelay: `${400 + index * 80}ms`,
                   animationFillMode: 'forwards',
                 }}
               >
-                <span className="font-mono text-sm text-surface-light mr-3">→</span>
+                <span className="font-mono text-lg text-surface-light mr-4">→</span>
                 {item.title}
-                <span className="text-surface-light text-sm ml-3">({item.subtitle})</span>
+                <span className="text-surface-light text-lg ml-4">({item.subtitle})</span>
               </Link>
             ))}
           </nav>

@@ -143,12 +143,12 @@ export const homeNavItems: NavItem[] = [
   {
     title: 'MicroLoop',
     subtitle: 'Teensy-based live looper for DAWless jams',
-    to: '/projects/microloop',
+    to: '/microloop',
   },
   {
     title: 'BassMINT',
     subtitle: 'Bass guitar training & fretboard visualization',
-    to: '/projects/bassmint',
+    to: '/bassmint',
   },
   {
     title: 'VOICE',
@@ -158,7 +158,7 @@ export const homeNavItems: NavItem[] = [
   {
     title: 'Prison Island',
     subtitle: 'Interactive escape room experience',
-    to: '/projects/prison-island',
+    to: '/prison-island',
   },
   {
     title: 'Links',

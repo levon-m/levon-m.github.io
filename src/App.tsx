@@ -16,9 +16,9 @@ function App() {
       <main className="flex-1 overflow-y-auto">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects/microloop" element={<MicroLoopPage />} />
-          <Route path="/projects/bassmint" element={<BassMINTPage />} />
-          <Route path="/projects/prison-island" element={<PrisonIslandPage />} />
+          <Route path="/microloop" element={<MicroLoopPage />} />
+          <Route path="/bassmint" element={<BassMINTPage />} />
+          <Route path="/prison-island" element={<PrisonIslandPage />} />
           <Route path="/voice" element={<VoicePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/resume" element={<ResumePage />} />

@@ -120,8 +120,8 @@ export default function AsciiWave({
         className="font-mono text-xs leading-tight text-accent whitespace-pre"
         style={{ opacity }}
       >
-        {lines.map((line, i) => (
-          <div key={i}>{line}</div>
+        {lines.filter(line => line !== undefined).map((line, i) => (
+          <div key={i}>{line || ''}</div>
         ))}
       </pre>
     </div>
