@@ -21,9 +21,9 @@ export const projects: Project[] = [
   {
     id: 'microloop',
     slug: 'microloop',
-    name: 'MicroLoop',
+    name: 'μLoop',
     shortDescription: 'Teensy-based live looper for DAWless performance',
-    fullDescription: `MicroLoop is a hardware audio looper built around the Teensy 4.x microcontroller,
+    fullDescription: `μLoop is a hardware audio looper built around the Teensy 4.x microcontroller,
     designed for live DAWless performance. It features real-time audio capture, overdub, stutter effects,
     and freeze functionality with tight MIDI clock synchronization. The project explores the intersection
     of embedded systems and creative audio tools, pushing the limits of what's achievable with
@@ -141,7 +141,7 @@ export interface NavItem {
 
 export const homeNavItems: NavItem[] = [
   {
-    title: 'MicroLoop',
+    title: 'μLoop',
     subtitle: 'Teensy-based live looper for DAWless jams',
     to: '/microloop',
   },

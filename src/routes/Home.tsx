@@ -24,7 +24,7 @@ export default function Home() {
               Hello! I'm an embedded software developer based in Los Angeles, CA.
             </p>
             <p>
-              I studied Computer Science at <a href="https://www.calpoly.edu/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Cal Poly SLO</a>, and have since been developing real-time aerospace applications at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a>
+              I studied Computer Science at Cal Poly SLO, and have since been developing real-time aerospace applications at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a>
             </p>
             <p>
               At heart, I am a bass player and music producer, and nothing excites me more than the intersection of sound and technology. In my free time, I develop software and hardware for live music performance and music theory practice, particularly with the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy</a> platform.
@@ -69,9 +69,14 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Separator */}
+        <div className="flex justify-center my-20">
+          <div className="w-2/3 h-px bg-surface/20"></div>
+        </div>
+
         {/* Projects Section */}
         <section className="space-y-8">
-          <h2 className="text-3xl font-bold text-surface">
+          <h2 className="text-2xl font-bold text-surface">
             What else have I worked on?
           </h2>
           {homeNavItems.map((item, index) => {
@@ -82,7 +87,12 @@ export default function Home() {
             if (item.to === '/bookmarks') {
               return (
                 <div key={item.to}>
-                  <h2 className="text-3xl font-bold text-surface mb-6">
+                  {/* Separator */}
+                  <div className="flex justify-center my-20">
+                    <div className="w-2/3 h-px bg-surface/20"></div>
+                  </div>
+
+                  <h2 className="text-2xl font-bold text-surface mb-6">
                     Bookmarks
                   </h2>
                   <div className="text-surface text-lg leading-relaxed max-w-3xl">
@@ -115,7 +125,7 @@ export default function Home() {
 
                     {/* Project Info */}
                     <div className="w-full md:w-1/2 space-y-3">
-                      <h2 className="text-2xl font-bold text-surface group-hover:italic">
+                      <h2 className="text-2xl font-bold text-accent underline group-hover:italic">
                         {item.title}
                       </h2>
                       <p className="text-surface-light text-base">
