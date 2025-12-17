@@ -18,53 +18,62 @@ export default function Home() {
             Levon Melkonyan
           </h1>
 
-          {/* Bio */}
-          <div className="text-surface space-y-5 text-lg leading-relaxed max-w-3xl">
-            <p>
-              Hello! I'm an embedded software developer based in Los Angeles, CA.
-            </p>
-            <p>
-              I studied Computer Science at Cal Poly SLO, and have since been developing real-time aerospace applications at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a>
-            </p>
-            <p>
-              At heart, I am a bass player and music producer, and nothing excites me more than the intersection of sound and technology. In my free time, I develop software and hardware for live music performance and music theory practice, particularly with the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy</a> platform.
-            </p>
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            {/* Bio */}
+            <div className="text-surface space-y-5 text-lg leading-relaxed flex-1">
+              <p className="text-xl">
+                Hello! I'm an embedded software developer based in Los Angeles, CA.
+              </p>
+              <p>
+                I studied Computer Science at Cal Poly SLO, and have since been developing real-time aerospace applications at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a>
+              </p>
+              <p>
+                At heart, I am a bass player and music producer, and nothing excites me more than the intersection of sound and technology. In my free time, I develop software and hardware for live music performance and music theory practice, particularly with the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy</a> platform.
+              </p>
 
-            {/* Links */}
-            <div className="flex gap-3 pt-2 items-center">
-              <a
-                href="/assets/Levon_Melkonyan_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-accent hover:italic"
-              >
-                CV
-              </a>
-              <span className="text-surface">•</span>
-              <a
-                href="https://github.com/levon-m"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-accent hover:italic"
-              >
-                GitHub
-              </a>
-              <span className="text-surface">•</span>
-              <a
-                href="https://www.linkedin.com/in/levonmelkonyan/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-accent hover:italic"
-              >
-                LinkedIn
-              </a>
-              <span className="text-surface">•</span>
-              <a
-                href="mailto:levon.melkonyan.cs@gmail.com"
-                className="underline text-accent hover:italic"
-              >
-                Email
-              </a>
+              {/* Links */}
+              <div className="flex gap-3 pt-2 items-center">
+                <a
+                  href="/assets/Levon_Melkonyan_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-accent hover:italic"
+                >
+                  CV
+                </a>
+                <span className="text-surface">•</span>
+                <a
+                  href="https://github.com/levon-m"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-accent hover:italic"
+                >
+                  GitHub
+                </a>
+                <span className="text-surface">•</span>
+                <a
+                  href="https://www.linkedin.com/in/levonmelkonyan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-accent hover:italic"
+                >
+                  LinkedIn
+                </a>
+                <span className="text-surface">•</span>
+                <a
+                  href="mailto:levon.melkonyan.cs@gmail.com"
+                  className="underline text-accent hover:italic"
+                >
+                  Email
+                </a>
+              </div>
+            </div>
+
+            {/* Bio Image Placeholder */}
+            <div className="w-full md:w-80 aspect-square bg-surface/10 rounded-2xl flex items-center justify-center border border-surface/20 flex-shrink-0">
+              <span className="text-surface-light font-mono text-sm">
+                [Bio Image]
+              </span>
             </div>
           </div>
         </section>
@@ -97,7 +106,7 @@ export default function Home() {
                   </h2>
                   <div className="text-surface text-lg leading-relaxed max-w-3xl">
                     <p>
-                      Take a look at my <Link to={item.to} className="underline text-accent hover:italic">bookmarks</Link> for a collection of some of my favorite mixed media, and things I generally find interesting.
+                      Take a look at my <Link to={item.to} className="underline text-accent hover:italic" onClick={() => window.scrollTo(0, 0)}>bookmarks</Link> for a collection of some of my favorite mixed media, and things I generally find interesting.
                     </p>
                     <p className="mt-2">
                       I hope something here resonates with you too!
@@ -114,7 +123,7 @@ export default function Home() {
                 className="block group no-underline"
                 onClick={() => window.scrollTo(0, 0)}
               >
-                <div className="relative bg-accent/10 rounded-2xl p-5 hover:bg-accent/50 transition-none">
+                <div className="relative bg-accent/10 rounded-2xl p-5 hover:bg-accent transition-none">
                   <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-5 items-center`}>
                     {/* Image Placeholder */}
                     <div className="w-full md:w-1/2 aspect-[16/9] bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
@@ -125,7 +134,7 @@ export default function Home() {
 
                     {/* Project Info */}
                     <div className="w-full md:w-1/2 space-y-3">
-                      <h2 className="text-2xl text-accent underline group-hover:italic">
+                      <h2 className="text-5xl sm:text-6xl text-accent underline group-hover:italic group-hover:text-accent/10">
                         {item.title}
                       </h2>
                       <p className="text-surface text-base">
