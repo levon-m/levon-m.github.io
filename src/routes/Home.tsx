@@ -9,6 +9,14 @@ export default function Home() {
     '/delivery-mayhem': ['C++', 'Arduino'],
   }
 
+  // Different blob shapes for each card - using asymmetric border-radius
+  const blobShapes = [
+    'blob-1', // microloop
+    'blob-2', // bassmint
+    'blob-3', // voice
+    'blob-4', // delivery-mayhem
+  ]
+
   return (
     <div className="min-h-screen py-12 px-8 sm:px-12 lg:px-16">
       <div className="max-w-5xl mx-auto">
@@ -82,6 +90,7 @@ export default function Home() {
           {homeNavItems.map((item, index) => {
             const isImageLeft = index % 2 === 0
             const tags = projectTags[item.to] || []
+            const blobClass = blobShapes[index] || 'blob-1'
 
             // Skip the Bookmarks page from projects
             if (item.to === '/bookmarks') {
@@ -114,7 +123,7 @@ export default function Home() {
                 className="block group no-underline"
                 onClick={() => window.scrollTo(0, 0)}
               >
-                <div className="relative bg-accent/10 rounded-2xl p-5 hover:bg-accent/50 transition-none">
+                <div className={`relative bg-accent/10 p-5 hover:bg-accent/50 transition-none ${blobClass}`}>
                   <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-5 items-center`}>
                     {/* Image Placeholder */}
                     <div className="w-full md:w-1/2 aspect-[16/9] bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
