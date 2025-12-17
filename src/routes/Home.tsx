@@ -71,13 +71,13 @@ export default function Home() {
 
         {/* Separator */}
         <div className="flex justify-center my-20">
-          <div className="w-2/3 h-px bg-surface/20"></div>
+          <div className="w-1/3 h-px bg-surface/20"></div>
         </div>
 
         {/* Projects Section */}
         <section className="space-y-8">
           <h2 className="text-2xl font-bold text-surface">
-            What else have I worked on?
+            Projects, Research, & Collaborations
           </h2>
           {homeNavItems.map((item, index) => {
             const isImageLeft = index % 2 === 0
@@ -89,7 +89,7 @@ export default function Home() {
                 <div key={item.to}>
                   {/* Separator */}
                   <div className="flex justify-center my-20">
-                    <div className="w-2/3 h-px bg-surface/20"></div>
+                    <div className="w-1/3 h-px bg-surface/20"></div>
                   </div>
 
                   <h2 className="text-2xl font-bold text-surface mb-6">
@@ -114,7 +114,7 @@ export default function Home() {
                 className="block group no-underline"
                 onClick={() => window.scrollTo(0, 0)}
               >
-                <div className="relative bg-accent/10 rounded-2xl p-5 hover:bg-accent/30 transition-none">
+                <div className="relative bg-accent/10 rounded-2xl p-5 hover:bg-accent/50 transition-none">
                   <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-5 items-center`}>
                     {/* Image Placeholder */}
                     <div className="w-full md:w-1/2 aspect-[16/9] bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
@@ -125,10 +125,10 @@ export default function Home() {
 
                     {/* Project Info */}
                     <div className="w-full md:w-1/2 space-y-3">
-                      <h2 className="text-2xl font-bold text-accent underline group-hover:italic">
+                      <h2 className="text-2xl text-accent underline group-hover:italic">
                         {item.title}
                       </h2>
-                      <p className="text-surface-light text-base">
+                      <p className="text-surface text-base">
                         {item.subtitle}
                       </p>
 

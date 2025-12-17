@@ -22,7 +22,7 @@ export default function SectionTitle({
   return (
     <div className={`mb-8 ${className}`}>
       <Tag className={`font-bold text-surface ${sizeClasses[Tag]}`}>{children}</Tag>
-      {subtitle && <p className="mt-2 text-gray-400 max-w-2xl">{subtitle}</p>}
+      {subtitle && <p className="mt-2 text-surface max-w-2xl">{subtitle}</p>}
     </div>
   )
 }
