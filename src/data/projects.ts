@@ -142,22 +142,22 @@ export interface NavItem {
 export const homeNavItems: NavItem[] = [
   {
     title: 'μLoop',
-    subtitle: 'Teensy-based live looper for DAWless jams',
+    subtitle: 'MIDI-synced looper & sampler, made for live performance',
     to: '/microloop',
   },
   {
     title: 'BassMINT',
-    subtitle: 'Bass guitar training & fretboard visualization',
+    subtitle: 'Bass guitar mount for real-time pitch + fret tracking over MIDI',
     to: '/bassmint',
   },
   {
     title: 'VOICE',
-    subtitle: 'Media archiving & privacy tools for activists',
+    subtitle: 'Non-profit organization building media archiving & privacy tools for activists',
     to: '/voice',
   },
   {
     title: 'Delivery Mayhem',
-    subtitle: 'Interactive escape room experience',
+    subtitle: 'Co-op party game developed for Prison Island (Gothenburg, Sweden)',
     to: '/delivery-mayhem',
   },
   {

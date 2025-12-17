@@ -104,7 +104,7 @@ export default function Home() {
                   <h2 className="text-2xl font-bold text-surface mb-6">
                     Bookmarks
                   </h2>
-                  <div className="text-surface text-lg leading-relaxed max-w-3xl">
+                  <div className="text-surface text-lg leading-relaxed flex-1">
                     <p>
                       Take a look at my <Link to={item.to} className="underline text-accent hover:italic" onClick={() => window.scrollTo(0, 0)}>bookmarks</Link> for a collection of some of my favorite mixed media, and things I generally find interesting.
                     </p>
@@ -134,7 +134,7 @@ export default function Home() {
 
                     {/* Project Info */}
                     <div className="w-full md:w-1/2 space-y-3">
-                      <h2 className="text-5xl sm:text-6xl text-accent underline group-hover:italic group-hover:text-accent/10">
+                      <h2 className="text-4xl sm:text-5xl text-accent underline group-hover:italic group-hover:text-background">
                         {item.title}
                       </h2>
                       <p className="text-surface text-base">
