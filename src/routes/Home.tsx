@@ -20,7 +20,7 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             {/* Bio */}
-            <div className="text-surface space-y-5 text-lg leading-relaxed flex-1 max-w-xl">
+            <div className="text-surface space-y-5 text-lg leading-relaxed flex-1">
               <p className="text-xl">
                 Hello!<br />
                 I'm an embedded software developer based in Los Angeles, CA.
@@ -74,7 +74,7 @@ export default function Home() {
             </div>
 
             {/* Bio Image Placeholder */}
-            <div className="w-full md:w-80 self-stretch bg-surface/10 rounded-2xl flex items-center justify-center border border-surface/20 flex-shrink-0 md:-ml-12">
+            <div className="w-full md:w-80 self-stretch bg-surface/10 rounded-2xl flex items-center justify-center border border-surface/20 flex-shrink-0 md:ml-8">
               <span className="text-surface-light font-mono text-sm">
                 [Bio Image]
               </span>
