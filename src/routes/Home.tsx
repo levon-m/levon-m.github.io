@@ -21,11 +21,8 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Bio */}
             <div className="text-surface space-y-5 text-lg leading-relaxed flex-1">
-              <p className="text-2xl">
-                Hello!
-              </p>
-              <p className="text-2xl">
-                I'm an embedded software developer based in Los Angeles, CA.
+              <p className="text-xl">
+                Hello! I'm an embedded software developer based in Los Angeles, CA.
               </p>
               <p>
                 I studied Computer Science at Cal Poly SLO, and have since been building real-time aerospace systems at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a>
@@ -76,7 +73,7 @@ export default function Home() {
             </div>
 
             {/* Bio Image Placeholder */}
-            <div className="w-full md:w-80 aspect-square bg-surface/10 rounded-2xl flex items-center justify-center border border-surface/20 flex-shrink-0">
+            <div className="w-full md:w-80 self-stretch bg-surface/10 rounded-2xl flex items-center justify-center border border-surface/20 flex-shrink-0 md:-ml-8">
               <span className="text-surface-light font-mono text-sm">
                 [Bio Image]
               </span>
