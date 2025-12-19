@@ -20,7 +20,7 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             {/* Bio */}
-            <div className="text-surface space-y-5 text-lg leading-relaxed flex-1">
+            <div className="text-surface space-y-5 text-lg leading-relaxed flex-1 max-w-2xl">
               <p className="text-xl">
                 Hello!<br />
                 I'm an embedded software developer based in Los Angeles, CA.
