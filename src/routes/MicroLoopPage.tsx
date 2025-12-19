@@ -24,7 +24,7 @@ export default function MicroLoopPage() {
             Overview
           </h2>
           <div className="text-surface space-y-5 text-lg leading-relaxed">
-            <p className="whitespace-pre-line">
+            <p>
               {project.fullDescription}
             </p>
             <ul className="space-y-3 list-disc pl-6">

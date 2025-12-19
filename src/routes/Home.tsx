@@ -21,14 +21,20 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Bio */}
             <div className="text-surface space-y-5 text-lg leading-relaxed flex-1">
-              <p className="text-xl">
-                Hello! I'm an embedded software developer based in Los Angeles, CA.
+              <p className="text-2xl">
+                Hello!
+              </p>
+              <p className="text-2xl">
+                I'm an embedded software developer based in Los Angeles, CA.
               </p>
               <p>
                 I studied Computer Science at Cal Poly SLO, and have since been building real-time aerospace systems at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a>
               </p>
               <p>
-                Outside of work, I'm a bass player and music producer, and I love building tools where hardware and software meet sound. To me, the best products come from treating engineering and creativity as equal partners, and I always strive to keep this balance. I try to make tools that get out of the way, feel satisfying to use, and are genuinely helpful to musicians. Lately, I've been working on tools for live music performance and visualized bass guitar tablature with the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy</a> platform, which you can read more about below.
+                Outside of work, I'm a bass player and music producer, and I love building tools where hardware and software meet sound. To me, the best products come from treating engineering and creativity as equal partners, and I always strive to keep this balance.
+              </p>
+              <p>
+                I try to make tools that get out of the way, feel satisfying to use, and are genuinely helpful to musicians. Lately, I've been working on tools for live music performance and visualized bass guitar tablature with the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy</a> platform, which you can read more about below.
               </p>
 
               {/* Links */}

@@ -23,11 +23,7 @@ export const projects: Project[] = [
     slug: 'microloop',
     name: 'μLoop',
     shortDescription: 'Teensy-based live looper for DAWless performance',
-    fullDescription: `μLoop is a hardware audio looper built around the Teensy 4.x microcontroller,
-    designed for live DAWless performance. It features real-time audio capture, overdub, stutter effects,
-    and freeze functionality with tight MIDI clock synchronization. The project explores the intersection
-    of embedded systems and creative audio tools, pushing the limits of what's achievable with
-    resource-constrained hardware.`,
+    fullDescription: `μLoop is a hardware audio looper built around the Teensy 4.x microcontroller, designed for live DAWless performance. It features real-time audio capture, overdub, stutter effects, and freeze functionality with tight MIDI clock synchronization. The project explores the intersection of embedded systems and creative audio tools, pushing the limits of what's achievable with resource-constrained hardware.`,
     tags: ['C++17', 'Teensy 4.1', 'DSP', 'RTOS'],
     stack: [
       'Teensy 4.1',
@@ -61,10 +57,7 @@ export const projects: Project[] = [
     slug: 'bassmint',
     name: 'BassMINT',
     shortDescription: 'Bass-guitar training & visualization tool',
-    fullDescription: `BassMINT is an interactive training system for bass guitarists that combines
-    hardware sensors with a JUCE-based desktop application. Using optical sensors on the fretboard,
-    it provides real-time feedback on finger placement, pitch accuracy, and technique. The system
-    aims to make practicing more engaging through visual feedback and gamified exercises.`,
+    fullDescription: `BassMINT is an interactive training system for bass guitarists that combines hardware sensors with a JUCE-based desktop application. Using optical sensors on the fretboard, it provides real-time feedback on finger placement, pitch accuracy, and technique. The system aims to make practicing more engaging through visual feedback and gamified exercises.`,
     tags: ['C++17', 'Teensy 4.0', 'DSP', 'JUCE'],
     stack: [
       'JUCE Framework',
@@ -97,10 +90,7 @@ export const projects: Project[] = [
     slug: 'delivery-mayhem',
     name: 'Delivery Mayhem',
     shortDescription: 'Interactive escape room experience',
-    fullDescription: `Prison Island is an interactive narrative escape room experience developed
-    during a study abroad program. The project combines physical puzzles, digital interfaces, and
-    storytelling to create an immersive gameplay experience. Players work together to solve
-    challenges and uncover the story behind a mysterious island prison.`,
+    fullDescription: `Prison Island is an interactive narrative escape room experience developed during a study abroad program. The project combines physical puzzles, digital interfaces, and storytelling to create an immersive gameplay experience. Players work together to solve challenges and uncover the story behind a mysterious island prison.`,
     tags: ['C++', 'Arduino'],
     stack: [
       'Unity',
