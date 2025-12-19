@@ -11,20 +11,11 @@ export default function LinksPage() {
     <div className="min-h-screen py-12 px-8 sm:px-12 lg:px-16">
       <div className="max-w-5xl mx-auto">
         <PageHeader
-          title="Inspiration & Links"
+          title="Bookmarks"
           subtitle="Resources, artists, and tools that inspire my work"
           backTo="/"
           backLabel="Home"
         />
-
-        {/* Intro */}
-        <div className="mb-16 text-surface space-y-5 text-lg leading-relaxed">
-          <p>
-            A curated collection of the music, research, and tools that influence my
-            projects. These range from artists who push musical boundaries to technical
-            resources for audio DSP and embedded systems.
-          </p>
-        </div>
 
         {/* Categories */}
         {categories.map((category) => {

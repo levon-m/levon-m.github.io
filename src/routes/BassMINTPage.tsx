@@ -13,22 +13,10 @@ export default function BassMINTPage() {
       <div className="max-w-5xl mx-auto">
         <PageHeader
           title={project.name}
-          subtitle={project.shortDescription}
+          subtitle="Bass guitar mount for real-time pitch + fret tracking over MIDI"
           backTo="/"
           backLabel="Home"
         />
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-16">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 bg-cream/50 text-surface text-sm rounded-full font-mono"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
 
         {/* Overview */}
         <section className="mb-16">

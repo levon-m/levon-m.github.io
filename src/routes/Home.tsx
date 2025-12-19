@@ -25,10 +25,10 @@ export default function Home() {
                 Hello! I'm an embedded software developer based in Los Angeles, CA.
               </p>
               <p>
-                I studied Computer Science at Cal Poly SLO, and have since been developing real-time aerospace applications at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a>
+                I studied Computer Science at Cal Poly SLO, and have since been building real-time aerospace systems at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a>
               </p>
               <p>
-                At heart, I am a bass player and music producer, and nothing excites me more than the intersection of sound and technology. In my free time, I develop software and hardware for live music performance and music theory practice, particularly with the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy</a> platform.
+                Outside of work, I'm a bass player and music producer, and I love building tools where hardware and software meet sound. To me, the best products come from treating engineering and creativity as equal partners, and I always strive to keep this balance. I try to make tools that get out of the way, feel satisfying to use, and are genuinely helpful to musicians. Lately, I've been working on tools for live music performance and visualized bass guitar tablature with the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy</a> platform, which you can read more about below.
               </p>
 
               {/* Links */}
@@ -106,10 +106,10 @@ export default function Home() {
                   </h2>
                   <div className="text-surface text-lg leading-relaxed flex-1">
                     <p>
-                      Take a look at my <Link to={item.to} className="underline text-accent hover:italic" onClick={() => window.scrollTo(0, 0)}>bookmarks</Link> for a collection of some of my favorite mixed media, and things I generally find interesting.
+                      Take a look at my <Link to={item.to} className="underline text-accent hover:italic" onClick={() => window.scrollTo(0, 0)}>bookmarks</Link> for a collection of my favorite mixed media and other things I find interesting.
                     </p>
                     <p className="mt-2">
-                      I hope something here resonates with you too!
+                      Hope you find something you like!
                     </p>
                   </div>
                 </div>

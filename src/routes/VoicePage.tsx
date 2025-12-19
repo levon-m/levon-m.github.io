@@ -6,22 +6,10 @@ export default function VoicePage() {
       <div className="max-w-5xl mx-auto">
         <PageHeader
           title="VOICE"
-          subtitle="Media, Privacy & Social Justice"
+          subtitle="Non-profit organization building media archiving & privacy tools for activists"
           backTo="/"
           backLabel="Home"
         />
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-16">
-          {['C++', 'ESP32', 'Python', 'OpenCV', 'PyTorch'].map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 bg-cream/50 text-surface text-sm rounded-full font-mono"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
 
         {/* Overview */}
         <section className="mb-16">

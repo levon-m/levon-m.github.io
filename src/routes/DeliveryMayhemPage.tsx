@@ -13,22 +13,10 @@ export default function DeliveryMayhemPage() {
       <div className="max-w-5xl mx-auto">
         <PageHeader
           title={project.name}
-          subtitle="Interactive Escape Room Experience"
+          subtitle="Co-op party game developed for Prison Island (Gothenburg, Sweden)"
           backTo="/"
           backLabel="Home"
         />
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-16">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 bg-cream/50 text-surface text-sm rounded-full font-mono"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
 
         {/* Overview */}
         <section className="mb-16">
