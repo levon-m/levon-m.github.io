@@ -21,7 +21,7 @@ export default function MicroLoopPage() {
             href={project.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-accent hover:italic -mt-8 mb-12 block"
+            className="underline text-accent hover:italic -mt-12 mb-12 block"
           >
             GitHub
           </a>
@@ -62,11 +62,13 @@ export default function MicroLoopPage() {
             How to Play
           </h2>
           <div className="text-surface space-y-6 text-base leading-relaxed">
-            <img
-              src="/assets/images/microloop-layout.png"
-              alt="MicroLoop layout diagram"
-              className="w-full rounded-lg mb-6"
-            />
+            <div className="flex justify-center mb-6">
+              <img
+                src="/assets/images/microloop-layout.png"
+                alt="MicroLoop layout diagram"
+                className="w-3/4 rounded-lg"
+              />
+            </div>
             <p>
               The idea is that you play audio into the device, record up to four different loops, and play them back over the original audio with the STUTTER effect. You have a "scratch work space", where you test out different loops, and commit them to one of four preset slots when you like what you hear. Alongside this, you have a FREEZE effect that sustains the last 30ms of audio, and a CHOKE effect that acts as an instant mute. Each effect has it's own settings menu, where you can toggle different capture/playback parameters to either be quantized to the MIDI clock, or activated freehand. There is also a Global Quantization menu, where you choose between 8 different beat subdivisions for the quantization to snap to.
             </p>
