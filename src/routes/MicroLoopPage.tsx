@@ -17,13 +17,23 @@ export default function MicroLoopPage() {
           backTo="/"
           backLabel="Home"
         />
+        {project.links.github && (
+          <a
+            href={project.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-accent hover:italic -mt-8 mb-12 block"
+          >
+            GitHub
+          </a>
+        )}
 
         {/* Why? */}
         <section className="mb-16">
           <h2 className="text-2xl font-bold text-surface mb-6">
             Why?
           </h2>
-          <div className="text-surface space-y-5 text-lg leading-relaxed">
+          <div className="text-surface space-y-5 text-base leading-relaxed">
             <p>
               I wanted a looper that can sample live audio, but also quantize the capture and playback to an external MIDI clock, like from a drum machine. Put more simply, I needed all interactions with the loops to stay locked to the grid. Quantization being the key feature, I couldn't find it in a desktop looper that wasn't upwards of $400, so I decided to build my own. Aimed at being a live performance effects box (for my use case), I prioritized immediacy and ease of use with minimal menu diving, as users can't sift through a giant menu during a live performance. The effects I chose were based around the kinds of electronic music that I personally like to play, although it can be used for just about anything with enough creativity. All in all, it came out to just $120! (and hundreds of hours of debugging and developing)
             </p>
@@ -52,13 +62,13 @@ export default function MicroLoopPage() {
           <h2 className="text-2xl font-bold text-surface mb-6">
             How to Play
           </h2>
-          <div className="text-surface space-y-6 text-lg leading-relaxed">
+          <div className="text-surface space-y-6 text-base leading-relaxed">
             <p>
               The idea is that you play audio into the device, record up to four different loops, and play them back over the original audio with the STUTTER effect. You have a "scratch work space", where you test out different loops, and commit them to one of four preset slots when you like what you hear. Alongside this, you have a FREEZE effect that sustains the last 30ms of audio, and a CHOKE effect that acts as an instant mute. Each effect has it's own settings menu, where you can toggle different capture/playback parameters to either be quantized to the MIDI clock, or activated freehand. There is also a Global Quantization menu, where you choose between 8 different beat subdivisions for the quantization to snap to.
             </p>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4">Inputs</h3>
+              <h3 className="text-xl font-semibold mb-4 underline">Inputs</h3>
               <ul className="space-y-3 list-disc pl-6">
                 <li><strong>STUTTER</strong> - Square activates STUTTER, circle is for setting navigation and selection</li>
                 <li><strong>FREEZE</strong> - Square activates FREEZE, circle is for setting navigation and selection</li>
@@ -80,7 +90,7 @@ export default function MicroLoopPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4">Menu Settings</h3>
+              <h3 className="text-xl font-semibold mb-4 underline">Menu Settings</h3>
               <p className="mb-4">
                 All setting selections are either Freehand or Quantized, with the exception of GLOBAL's Quantization, which includes 1/32, 1/32T, 1/16, 1/16T, 1/8, 1/8T, 1/4, and 1/4T.
               </p>
@@ -124,10 +134,10 @@ export default function MicroLoopPage() {
           <h2 className="text-2xl font-bold text-surface mb-6">
             Hardware
           </h2>
-          <ul className="text-surface space-y-3 text-lg leading-relaxed list-disc pl-6">
-            <li><strong>Teensy 4.1 + Audio Adapter</strong> - The brain and audio interface</li>
-            <li><strong>Adafruit MIDI FeatherWing</strong> - MIDI DIN I/O, although we only use the input</li>
-            <li><strong>Adafruit NeoKey 1X4 switches</strong> - For all interactions with effects</li>
+          <ul className="text-surface space-y-3 text-base leading-relaxed list-disc pl-6">
+            <li><a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic"><strong>Teensy 4.1</strong></a> + <a href="https://www.pjrc.com/store/teensy3_audio.html" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic"><strong>Audio Adapter</strong></a> - The brain and audio interface</li>
+            <li><a href="https://www.adafruit.com/product/4740" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic"><strong>Adafruit MIDI FeatherWing</strong></a> - MIDI DIN I/O, although we only use the input</li>
+            <li><a href="https://www.adafruit.com/product/4980" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic"><strong>Adafruit NeoKey 1X4 switches</strong></a> - For all interactions with effects</li>
             <li><strong>CYT1100 Rotary Encoders with switches</strong> - For settings menu navigation and selection</li>
             <li><strong>MCP23017 I2C I/O expander</strong> - Not enough pins on the Teensy without it, also adds interrupts to the encoders</li>
             <li><strong>8 MB PSRAM Chip</strong> - Allows for use of much larger loop buffers</li>
@@ -144,45 +154,13 @@ export default function MicroLoopPage() {
           <h2 className="text-2xl font-bold text-surface mb-6">
             Design and Architecture
           </h2>
-          <div className="text-surface space-y-5 text-lg leading-relaxed">
+          <div className="text-surface space-y-5 text-base leading-relaxed">
             <p>
-              This was my first time facing product design at this scale and across software, hardware, electrical, and even mechanical domains, but it was one of my most rewarding experiences. For the brain, I chose the Teensy 4.1 microcontroller, as it has a very strong audio ecosystem, and a powerful Cortex-M7 core, giving me plenty of processing headroom for experimenting. Speaking of the audio ecosystem, I used the Teensy Audio Adapter board with the SGTL5000 codec over I2S, which gave me 16-bit, 44.1 kHz audio to work with over stereo line I/O. More importantly, this allowed me to use the Teensy Audio Library, which abstracted a lot of the register-level interactions with the DAC, like buffering the audio with DMA (I made my own driver that somewhat worked, but ultimately went with the library's implementation).
+              This was my first time facing product design at this scale and across software, hardware, electrical, and even mechanical domains, but it was one of my most rewarding experiences. For the brain, I chose the Teensy 4.1 microcontroller, as it has a very strong audio ecosystem, and a powerful Cortex-M7 core, giving me plenty of processing headroom for experimenting. Speaking of the audio ecosystem, I used the Teensy Audio Adapter board with the SGTL5000 codec over I2S, which gave me 16-bit, 44.1 kHz audio to work with over stereo line I/O. More importantly, this allowed me to use the <a href="https://www.pjrc.com/teensy/td_libs_Audio.html" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy Audio library</a>, which abstracted a lot of the register-level interactions with the DAC, like buffering the audio with DMA (I made my own driver that somewhat worked, but ultimately went with the library's implementation).
             </p>
             <p>
-              One of the biggest challenges was designing the system to be deterministic, with absolutely no audio glitches, and a responsive interface. A multithreaded design was the clear choice for this, giving each element like the MIDI, buttons, encoders, etc. their own processing space. My code absolutely could not block anything else from running and had to stay atomic, especially in the audio thread. If the audio cuts out or crackles, the whole product is basically useless. Anything I used for DSP, especially the main loop buffers, had to be allocated beforehand, as dynamic allocation would make the performance very sluggish and at risk of memory leaks. For the thread concurrency, I used the Teensy Threads library instead of a full RTOS. Of course, it is made specifically for the Teensy, but it also excels at providing very lightweight preemptive multithreading without the extra overhead of a full RTOS like heavy synchronization primitives. Other housekeeping included using CMake and Ninja instead of the Arduino IDE, which makes for more reproducible and cross-compatible builds.
+              One of the biggest challenges was designing the system to be deterministic, with absolutely no audio glitches, and a responsive interface. A multithreaded design was the clear choice for this, giving each element like the MIDI, buttons, encoders, etc. their own processing space. My code absolutely could not block anything else from running and had to stay atomic, especially in the audio thread. If the audio cuts out or crackles, the whole product is basically useless. Anything I used for DSP, especially the main loop buffers, had to be allocated beforehand, as dynamic allocation would make the performance very sluggish and at risk of memory leaks. For the thread concurrency, I used the <a href="https://github.com/ftrias/TeensyThreads" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy Threads library</a> instead of a full RTOS. Of course, it is made specifically for the Teensy, but it also excels at providing very lightweight preemptive multithreading without the extra overhead of a full RTOS like heavy synchronization primitives. Other housekeeping included using CMake and Ninja instead of the Arduino IDE, which makes for more reproducible and cross-compatible builds.
             </p>
-          </div>
-        </section>
-
-        {/* Links */}
-        <section>
-          <h2 className="text-2xl font-bold text-surface mb-6">
-            Links
-          </h2>
-          <div className="flex flex-wrap gap-3 items-center">
-            {project.links.github && (
-              <a
-                href={project.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-accent hover:italic"
-              >
-                GitHub
-              </a>
-            )}
-            {project.links.video && (
-              <>
-                <span className="text-surface">•</span>
-                <a
-                  href={project.links.video}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline text-accent hover:italic"
-                >
-                  Demo
-                </a>
-              </>
-            )}
           </div>
         </section>
       </div>
