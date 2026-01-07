@@ -13,19 +13,24 @@ export default function MicroLoopPage() {
       <div className="max-w-5xl mx-auto">
         <PageHeader
           title={project.name}
-          subtitle="MIDI-synced looper & sampler, made for live performance"
           backTo="/"
           backLabel="Home"
-        />{project.links.github && (
-          <a
-            href={project.links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline text-accent hover:italic text-lg -mt-14 mb-12 block"
-          >
-            GitHub
-          </a>
-        )}
+        />
+        <div className="-mt-12 mb-12">
+          <p className="text-xl text-surface leading-relaxed">
+            MIDI-synced looper & sampler, made for live performance
+          </p>
+          {project.links.github && (
+            <a
+              href={project.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-accent hover:italic text-xl"
+            >
+              GitHub
+            </a>
+          )}
+        </div>
 
         {/* Why? */}
         <section className="mb-16">
