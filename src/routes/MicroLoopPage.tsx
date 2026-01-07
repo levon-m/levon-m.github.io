@@ -21,7 +21,7 @@ export default function MicroLoopPage() {
             href={project.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-accent hover:italic -mt-12 mb-12 block"
+            className="underline text-accent hover:italic text-lg -mt-14 mb-12 block"
           >
             GitHub
           </a>
