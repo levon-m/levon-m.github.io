@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 
 interface SectionTitleProps {
   children: ReactNode
@@ -43,12 +44,12 @@ export function PageHeader({
 }: PageHeaderProps) {
   return (
     <div className="mb-16">
-      <a
-        href={backTo}
+      <Link
+        to={backTo}
         className="underline text-accent hover:italic text-lg mb-8 inline-block"
       >
         &lt;- {backLabel}
-      </a>
+      </Link>
       <h1 className="text-5xl sm:text-6xl font-bold text-surface mb-4">
         {title}
       </h1>

@@ -4,10 +4,6 @@
 
 /* Base styles */
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     @apply bg-background text-surface font-sans antialiased;
   }
@@ -149,22 +145,4 @@
   opacity: 1;
   transform: translateY(0);
   transition: opacity 300ms ease-out, transform 300ms ease-out;
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-background;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-surface-light rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-surface;
 }

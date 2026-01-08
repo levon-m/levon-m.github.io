@@ -1,8 +1,9 @@
+import { useMemo } from 'react'
 import { PageHeader } from '../components/common/SectionTitle'
 import { getProjectBySlug } from '../data/projects'
 
 export default function MicroLoopPage() {
-  const project = getProjectBySlug('microloop')
+  const project = useMemo(() => getProjectBySlug('microloop'), [])
 
   if (!project) {
     return <div>Project not found</div>

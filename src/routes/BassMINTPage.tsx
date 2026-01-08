@@ -1,8 +1,9 @@
+import { useMemo } from 'react'
 import { PageHeader } from '../components/common/SectionTitle'
 import { getProjectBySlug } from '../data/projects'
 
 export default function BassMINTPage() {
-  const project = getProjectBySlug('bassmint')
+  const project = useMemo(() => getProjectBySlug('bassmint'), [])
 
   if (!project) {
     return <div>Project not found</div>

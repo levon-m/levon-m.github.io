@@ -1,13 +1,14 @@
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { homeNavItems } from '../data/projects'
 
 export default function Home() {
-  const projectTags: Record<string, string[]> = {
+  const projectTags: Record<string, string[]> = useMemo(() => ({
     '/microloop': ['C++17', 'Teensy 4.1', 'DSP', 'RTOS'],
     '/bassmint': ['C++17', 'Teensy 4.0', 'DSP', 'JUCE'],
     '/voice': ['C++', 'ESP32', 'Python', 'OpenCV', 'PyTorch'],
     '/delivery-mayhem': ['C++', 'Arduino'],
-  }
+  }), [])
 
   return (
     <div className="min-h-screen py-12 px-8 sm:px-12 lg:px-16">
@@ -110,7 +111,7 @@ export default function Home() {
                   </h2>
                   <div className="text-surface text-lg leading-relaxed flex-1">
                     <p>
-                      Take a look at my <Link to={item.to} className="underline text-accent hover:italic" onClick={() => window.scrollTo(0, 0)}>bookmarks</Link> for a collection of my favorite mixed media and other things I find interesting.
+                      Take a look at my <Link to={item.to} className="underline text-accent hover:italic">bookmarks</Link> for a collection of my favorite mixed media and other things I find interesting.
                     </p>
                     <p className="mt-2">
                       Hope you find something you like!
@@ -125,7 +126,6 @@ export default function Home() {
                 key={item.to}
                 to={item.to}
                 className="block group no-underline"
-                onClick={() => window.scrollTo(0, 0)}
               >
                 <div className="relative bg-accent/10 rounded-2xl p-5 hover:bg-accent transition-none">
                   <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-5 items-center`}>

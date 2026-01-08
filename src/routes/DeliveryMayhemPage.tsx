@@ -1,8 +1,9 @@
+import { useMemo } from 'react'
 import { PageHeader } from '../components/common/SectionTitle'
 import { getProjectBySlug } from '../data/projects'
 
 export default function DeliveryMayhemPage() {
-  const project = getProjectBySlug('delivery-mayhem')
+  const project = useMemo(() => getProjectBySlug('delivery-mayhem'), [])
 
   if (!project) {
     return <div>Project not found</div>
