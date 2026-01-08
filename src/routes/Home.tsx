@@ -11,7 +11,7 @@ export default function Home() {
   }), [])
 
   return (
-    <div className="min-h-screen py-12 px-8 sm:px-12 lg:px-16">
+    <div className="min-h-screen py-12 px-12 sm:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto">
         {/* Header Section */}
         <section className="mb-16">
@@ -21,9 +21,9 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             {/* Bio */}
-            <div className="text-surface space-y-5 text-lg leading-relaxed flex-1">
+            <div className="text-surface space-y-5 text-base leading-relaxed flex-1">
               <p>
-                My name is Levon, and I'm an embedded software developer based in Los Angeles, CA.
+                My name is <span className="font-bold">Levon</span>, and I'm an embedded software developer based in Los Angeles, CA.
               </p>
               <p>
                 In my free time, I play bass guitar, produce electronic music, and explore the intersection of sound, hardware, and user interaction. I believe the best tools come from keeping a precise balance between creativity and engineering, and equally nurturing both is very important to me.
@@ -111,11 +111,11 @@ export default function Home() {
                   <h2 className="text-2xl font-bold text-surface mb-6">
                     Bookmarks
                   </h2>
-                  <div className="text-surface text-lg leading-relaxed flex-1">
+                  <div className="text-surface text-base leading-relaxed flex-1">
                     <p>
                       Take a look at my <Link to={item.to} className="underline text-accent hover:italic">bookmarks</Link> for a collection of my favorite mixed media and other things I find interesting.
                     </p>
-                    <p className="mt-2">
+                    <p>
                       Hope you find something you like!
                     </p>
                   </div>
@@ -132,14 +132,14 @@ export default function Home() {
                 <div className="relative bg-accent/10 rounded-2xl p-5 hover:bg-accent transition-none">
                   <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-5 items-center`}>
                     {/* Image Placeholder */}
-                    <div className="w-full md:w-1/2 aspect-[16/9] bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
+                    <div className="w-full md:w-2/5 aspect-[4/3] bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
                       <span className="text-surface-light font-mono text-sm">
                         [Project Image]
                       </span>
                     </div>
 
                     {/* Project Info */}
-                    <div className="w-full md:w-1/2 space-y-3">
+                    <div className="w-full md:w-3/5 space-y-3">
                       <h2 className="text-4xl sm:text-5xl text-accent underline group-hover:italic group-hover:text-background">
                         {item.title}
                       </h2>

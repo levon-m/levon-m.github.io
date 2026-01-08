@@ -2,7 +2,7 @@ import { PageHeader } from '../components/common/SectionTitle'
 
 export default function VoicePage() {
   return (
-    <div className="min-h-screen py-12 px-8 sm:px-12 lg:px-16">
+    <div className="min-h-screen py-12 px-12 sm:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto">
         <PageHeader
           title="VOICE"
