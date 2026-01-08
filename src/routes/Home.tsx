@@ -127,7 +127,7 @@ export default function Home() {
               <Link
                 key={item.to}
                 to={item.to}
-                className="block group no-underline"
+                className="block group no-underline max-w-4xl mx-auto"
               >
                 <div className="relative bg-accent/10 rounded-2xl p-5 hover:bg-accent transition-none">
                   <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-5 items-center`}>
