@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from './routes/Home'
+import ScrollToTop from './components/ScrollToTop'
 
 // Lazy load route components for better performance
 const MicroLoopPage = lazy(() => import('./routes/MicroLoopPage'))
@@ -12,6 +13,7 @@ const BookmarksPage = lazy(() => import('./routes/BookmarksPage'))
 function App() {
   return (
     <div className="min-h-screen bg-background text-surface">
+      <ScrollToTop />
       <main>
         <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
           <Routes>

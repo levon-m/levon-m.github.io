@@ -16,24 +16,26 @@ export default function Home() {
         {/* Header Section */}
         <section className="mb-16">
           <h1 className="text-5xl sm:text-6xl font-bold text-surface mb-8">
-            Levon Melkonyan
+            Hi,
           </h1>
 
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             {/* Bio */}
             <div className="text-surface space-y-5 text-lg leading-relaxed flex-1">
-              <p className="text-xl">
-                Hello!<br />
-                I'm an embedded software developer based in Los Angeles, CA.
+              <p>
+                My name is Levon, and I'm an embedded software developer based in Los Angeles, CA.
               </p>
               <p>
-                I studied Computer Science at Cal Poly SLO, and have since been building real-time aerospace systems at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a>
+                In my free time, I play bass guitar, produce electronic music, and explore the intersection of sound, hardware, and user interaction. I believe the best tools come from keeping a precise balance between creativity and engineering, and equally nurturing both is very important to me.
               </p>
               <p>
-                Outside of work, I'm a bass player and music producer, and I love building tools where hardware and software meet sound. To me, the best products come from treating engineering and creativity as equal partners, and I always strive to keep this balance.
+                I hold a Bachelor's in Computer Science from <a href="https://www.calpoly.edu/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Cal Poly SLO</a>, with additional Master's-level coursework completed during an exchange program at <a href="https://www.chalmers.se/en/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Chalmers University of Technology</a> in Sweden.
               </p>
               <p>
-                I try to make tools that get out of the way, feel satisfying to use, and are genuinely helpful to musicians. Lately, I've been working on tools for live music performance and visualized bass guitar tablature with the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy</a> platform, which you can read more about below.
+                Since graduating in 2024, I've been building real-time aerospace systems full-time at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a> I've also been involved with non-profit work at <a href="https://www.studiovoice.org/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">VOICE</a> since college, including building a physical installation for the 2025 <a href="https://timespaceexistence.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Time Space Existence Biennale</a> in Venice, and guest lecturing for a course at the <a href="https://www.washington.edu/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">University of Washington</a> about our work.
+              </p>
+              <p>
+                I'm always open to new opportunities and collaborations, so don't hesitate to reach out if you think we could work together, or just to talk about anything mentioned above!
               </p>
 
               {/* Links */}
