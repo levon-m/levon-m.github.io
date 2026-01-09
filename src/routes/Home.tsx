@@ -35,7 +35,7 @@ export default function Home() {
                 Since graduating in 2024, I've been building real-time aerospace systems full-time at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a> I've also been involved with non-profit work at <a href="https://www.studiovoice.org/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">VOICE</a> since college, including building a physical installation for the 2025 <a href="https://timespaceexistence.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Time Space Existence Biennale</a> in Venice, and guest lecturing for a course at the <a href="https://www.washington.edu/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">University of Washington</a> about our work.
               </p>
               <p>
-                Take a look at my <Link to={item.to} className="underline text-accent hover:italic">bookmarks</Link> for a collection of my favorite mixed media and other sources of inspiration. I'm always open to new opportunities and collaborations, so don't hesitate to reach out!
+                Take a look at my <Link to="/bookmarks" className="underline text-accent hover:italic">bookmarks</Link> for a collection of my favorite mixed media and other sources of inspiration. I'm always open to new opportunities and collaborations, so don't hesitate to reach out!
               </p>
 
               {/* Links */}
