@@ -78,7 +78,7 @@ export default function MicroLoopPage() {
             How to Play
           </h2>
           <div className="text-surface space-y-6 text-base leading-relaxed">
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center my-8">
               <img
                 src="/assets/images/microloop-layout.png"
                 alt="MicroLoop layout diagram"
