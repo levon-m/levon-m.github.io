@@ -35,7 +35,7 @@ export default function MicroLoopPage() {
 
         {/* Why? */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-surface mb-6">
+          <h2 className="text-3xl font-bold text-surface mb-6">
             Why?
           </h2>
           <div className="text-surface space-y-5 text-base leading-relaxed">
@@ -45,9 +45,14 @@ export default function MicroLoopPage() {
           </div>
         </section>
 
+        {/* Separator */}
+        <div className="flex justify-center my-20">
+          <div className="w-1/3 h-px bg-surface/20"></div>
+        </div>
+
         {/* Demo */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-surface mb-6">
+          <h2 className="text-3xl font-bold text-surface mb-6">
             Demo
           </h2>
           <div className="aspect-video w-full">
@@ -62,9 +67,14 @@ export default function MicroLoopPage() {
           </div>
         </section>
 
+        {/* Separator */}
+        <div className="flex justify-center my-20">
+          <div className="w-1/3 h-px bg-surface/20"></div>
+        </div>
+
         {/* How to Play */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-surface mb-6">
+          <h2 className="text-3xl font-bold text-surface mb-6">
             How to Play
           </h2>
           <div className="text-surface space-y-6 text-base leading-relaxed">
@@ -141,9 +151,14 @@ export default function MicroLoopPage() {
           </div>
         </section>
 
+        {/* Separator */}
+        <div className="flex justify-center my-20">
+          <div className="w-1/3 h-px bg-surface/20"></div>
+        </div>
+
         {/* Hardware */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-surface mb-6">
+          <h2 className="text-3xl font-bold text-surface mb-6">
             Hardware
           </h2>
           <ul className="text-surface space-y-3 text-base leading-relaxed list-disc pl-6">
@@ -161,9 +176,14 @@ export default function MicroLoopPage() {
           </ul>
         </section>
 
+        {/* Separator */}
+        <div className="flex justify-center my-20">
+          <div className="w-1/3 h-px bg-surface/20"></div>
+        </div>
+
         {/* Design and Architecture */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-surface mb-6">
+          <h2 className="text-3xl font-bold text-surface mb-6">
             Design and Architecture
           </h2>
           <div className="text-surface space-y-5 text-base leading-relaxed">

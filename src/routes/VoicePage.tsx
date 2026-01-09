@@ -13,7 +13,7 @@ export default function VoicePage() {
 
         {/* Overview */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-surface mb-6">
+          <h2 className="text-3xl font-bold text-surface mb-6">
             Overview
           </h2>
           <div className="text-surface space-y-5 text-lg leading-relaxed">
@@ -41,9 +41,14 @@ export default function VoicePage() {
           </div>
         </section>
 
+        {/* Separator */}
+        <div className="flex justify-center my-20">
+          <div className="w-1/3 h-px bg-surface/20"></div>
+        </div>
+
         {/* Media */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-surface mb-6">
+          <h2 className="text-3xl font-bold text-surface mb-6">
             Media
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -60,9 +65,14 @@ export default function VoicePage() {
           </div>
         </section>
 
+        {/* Separator */}
+        <div className="flex justify-center my-20">
+          <div className="w-1/3 h-px bg-surface/20"></div>
+        </div>
+
         {/* Links */}
         <section>
-          <h2 className="text-2xl font-bold text-surface mb-6">
+          <h2 className="text-3xl font-bold text-surface mb-6">
             Links
           </h2>
           <div className="flex flex-wrap gap-3 items-center">

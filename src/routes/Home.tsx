@@ -35,7 +35,7 @@ export default function Home() {
                 Since graduating in 2024, I've been building real-time aerospace systems full-time at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a> I've also been involved with non-profit work at <a href="https://www.studiovoice.org/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">VOICE</a> since college, including building a physical installation for the 2025 <a href="https://timespaceexistence.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Time Space Existence Biennale</a> in Venice, and guest lecturing for a course at the <a href="https://www.washington.edu/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">University of Washington</a> about our work.
               </p>
               <p>
-                I'm always open to new opportunities and collaborations, so don't hesitate to reach out if you think we could work together, or just to talk about anything mentioned above!
+                Take a look at my <Link to={item.to} className="underline text-accent hover:italic">bookmarks</Link> for a collection of my favorite mixed media and other sources of inspiration. I'm always open to new opportunities and collaborations, so don't hesitate to reach out!
               </p>
 
               {/* Links */}
@@ -92,7 +92,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <section className="space-y-8">
-          <h2 className="text-2xl font-bold text-surface">
+          <h2 className="text-3xl font-bold text-surface">
             Projects, Research, & Collaborations
           </h2>
           {homeNavItems.map((item, index) => {
@@ -101,26 +101,7 @@ export default function Home() {
 
             // Skip the Bookmarks page from projects
             if (item.to === '/bookmarks') {
-              return (
-                <div key={item.to}>
-                  {/* Separator */}
-                  <div className="flex justify-center my-20">
-                    <div className="w-1/3 h-px bg-surface/20"></div>
-                  </div>
-
-                  <h2 className="text-2xl font-bold text-surface mb-6">
-                    Bookmarks
-                  </h2>
-                  <div className="text-surface text-base leading-relaxed flex-1">
-                    <p>
-                      Take a look at my <Link to={item.to} className="underline text-accent hover:italic">bookmarks</Link> for a collection of my favorite mixed media and other things I find interesting.
-                    </p>
-                    <p>
-                      Hope you find something you like!
-                    </p>
-                  </div>
-                </div>
-              )
+              return null
             }
 
             return (
