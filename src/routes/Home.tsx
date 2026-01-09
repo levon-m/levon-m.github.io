@@ -11,15 +11,15 @@ export default function Home() {
   }), [])
 
   return (
-    <div className="min-h-screen py-12 px-12 sm:px-16 lg:px-24">
-      <div className="max-w-5xl mx-auto">
+    <div className="min-h-screen py-12 px-16 sm:px-24 lg:px-32">
+      <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <section className="mb-16">
           <h1 className="text-5xl sm:text-6xl font-bold text-surface mb-8">
             Hi,
           </h1>
 
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-6 items-start">
             {/* Bio */}
             <div className="text-surface space-y-5 text-base leading-relaxed flex-1">
               <p>
@@ -77,7 +77,7 @@ export default function Home() {
             </div>
 
             {/* Bio Image Placeholder */}
-            <div className="w-full md:w-80 self-stretch bg-surface/10 rounded-2xl flex items-center justify-center border border-surface/20 flex-shrink-0 md:ml-8">
+            <div className="w-full md:w-96 self-stretch bg-surface/10 rounded-2xl flex items-center justify-center border border-surface/20 flex-shrink-0">
               <span className="text-surface-light font-mono text-sm">
                 [Bio Image]
               </span>
