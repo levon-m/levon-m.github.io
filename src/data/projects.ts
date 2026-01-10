@@ -142,7 +142,7 @@ export const homeNavItems: NavItem[] = [
   },
   {
     title: 'VOICE',
-    subtitle: 'Non-profit organization building media archiving & privacy tools for activists',
+    subtitle: 'Non-profit organization promoting social justice through digital media archiving and privacy protection',
     to: '/voice',
   },
   {

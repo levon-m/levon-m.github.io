@@ -18,7 +18,7 @@ export default {
           light: '#4f5270',
           dark: '#2a2c3f',
         },
-        background: '#FAF0E6', // Eggshell
+        background: '#FFFAF5', // Eggshell
         peach: '#e07a5f',      // Burnt Peach
         cream: '#f2cc8f',      // Apricot Cream
       },
