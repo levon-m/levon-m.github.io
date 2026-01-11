@@ -19,6 +19,11 @@ export default function DeliveryMayhemPage() {
           backLabel="Home"
         />
 
+        {/* Separator */}
+        <div className="flex justify-center my-12">
+          <div className="w-1/3 h-px bg-surface/20"></div>
+        </div>
+
         {/* Background */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-surface mb-6">
@@ -76,6 +81,11 @@ export default function DeliveryMayhemPage() {
             />
           </div>
         </section>
+
+        {/* Separator */}
+        <div className="flex justify-center my-12">
+          <div className="w-1/3 h-px bg-surface/20"></div>
+        </div>
       </div>
     </div>
   )

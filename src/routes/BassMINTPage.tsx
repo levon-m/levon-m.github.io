@@ -33,6 +33,11 @@ export default function BassMINTPage() {
           )}
         </div>
 
+        {/* Separator */}
+        <div className="flex justify-center my-12">
+          <div className="w-1/3 h-px bg-surface/20"></div>
+        </div>
+
         <div className="text-surface space-y-5 text-base leading-relaxed">
           <p>
             Bass (M)ount for (I)nfrared (N)ote (T)ranscription is a device built with the Teensy 4.0 that slides onto your bass guitar bridge and streams the string/fret played (monophonically) in real time via MIDI. This information can be utilized by software like DAW plugins to create practice, transcription, or education tools. The device currently only supports 4-string bass guitars with the Fender Jazz-style bridge, with up to 24 frets.
@@ -98,6 +103,11 @@ export default function BassMINTPage() {
               </a>
             </li>
           </ul>
+        </div>
+
+        {/* Separator */}
+        <div className="flex justify-center my-12">
+          <div className="w-1/3 h-px bg-surface/20"></div>
         </div>
       </div>
     </div>

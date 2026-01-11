@@ -17,6 +17,11 @@ export default function LinksPage() {
           backLabel="Home"
         />
 
+        {/* Separator */}
+        <div className="flex justify-center my-12">
+          <div className="w-1/3 h-px bg-surface/20"></div>
+        </div>
+
         {/* Categories */}
         {categories.map((category) => {
           return (
@@ -35,6 +40,11 @@ export default function LinksPage() {
             </section>
           )
         })}
+
+        {/* Separator */}
+        <div className="flex justify-center my-12">
+          <div className="w-1/3 h-px bg-surface/20"></div>
+        </div>
       </div>
     </div>
   )
