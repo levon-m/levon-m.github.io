@@ -208,8 +208,8 @@ export default function MicroLoopPage() {
         </div>
 
         {/* Bottom Home Link */}
-        <Link to="/" className="text-surface hover:text-accent inline-block">
-          ← Home
+        <Link to="/" className="underline text-accent hover:italic text-lg inline-block">
+          &lt;- Home
         </Link>
       </div>
     </div>

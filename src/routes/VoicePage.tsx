@@ -82,7 +82,7 @@ export default function VoicePage() {
           </h2>
           <div className="text-surface space-y-5 text-lg leading-relaxed">
             <p>
-              After I graduated, we established VOICE as a non-profit. Since, I've been working part-time on leading the new vocal anonymization portion, some help on the backend of the platform, and securing funding for our efforts. One of our biggest wins for visibility was our installation at the 2025 <a href="https://timespaceexistence.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Time Space Existence Biennale</a> in Venice, where I added an ESP32 and motion sensors to control a motor that scrolls through our display when someone approaches it. Additionally, I am a guest lecturer for a course about our work at the <a href="https://www.washington.edu/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">University of Washington</a>, where our founder now teaches.
+              After I graduated, we established VOICE as a non-profit. Since, I've been working part-time on leading the new vocal anonymization portion, some help on the backend of the platform, and securing funding for our efforts. One of our biggest wins for visibility was <a href="https://my.matterport.com/show/?m=1huMtWKupqk&ss=426&sr=-1.74,1.36" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">our installation</a> at the 2025 <a href="https://timespaceexistence.com/participants/voice//" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Time Space Existence Biennale</a> in Venice, where I added an ESP32 and motion sensors to control a motor that scrolls through our display when someone approaches it. Additionally, I am a guest lecturer for a course about our work at the <a href="https://www.washington.edu/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">University of Washington</a>, where our founder now teaches.
             </p>
 
             <img
@@ -115,8 +115,8 @@ export default function VoicePage() {
         </div>
 
         {/* Bottom Home Link */}
-        <Link to="/" className="text-surface hover:text-accent inline-block">
-          ← Home
+        <Link to="/" className="underline text-accent hover:italic text-lg inline-block">
+          &lt;- Home
         </Link>
       </div>
     </div>
