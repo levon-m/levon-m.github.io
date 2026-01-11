@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { PageHeader } from '../components/common/SectionTitle'
 import { getProjectBySlug } from '../data/projects'
 
@@ -19,7 +20,7 @@ export default function MicroLoopPage() {
         />
         <div className="-mt-12 mb-12">
           <p className="text-xl text-surface leading-relaxed">
-            MIDI-synced looper & sampler, made for live performance
+            MIDI-synced looper, sampler, & effects machine made for live performance
           </p>
           {project.links.github && (
             <a
@@ -205,6 +206,11 @@ export default function MicroLoopPage() {
         <div className="flex justify-center my-12">
           <div className="w-1/3 h-px bg-surface/20"></div>
         </div>
+
+        {/* Bottom Home Link */}
+        <Link to="/" className="text-surface hover:text-accent inline-block">
+          ← Home
+        </Link>
       </div>
     </div>
   )

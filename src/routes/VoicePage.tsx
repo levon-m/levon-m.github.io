@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { PageHeader } from '../components/common/SectionTitle'
 
 export default function VoicePage() {
@@ -112,6 +113,11 @@ export default function VoicePage() {
         <div className="flex justify-center my-12">
           <div className="w-1/3 h-px bg-surface/20"></div>
         </div>
+
+        {/* Bottom Home Link */}
+        <Link to="/" className="text-surface hover:text-accent inline-block">
+          ← Home
+        </Link>
       </div>
     </div>
   )

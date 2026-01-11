@@ -23,14 +23,14 @@ export default function Home() {
         {/* Header Section */}
         <section className="mb-16">
           <h1 className="text-5xl sm:text-6xl font-bold text-surface mb-8">
-            Hi,
+            Hi, I'm Levon
           </h1>
 
           <div className="flex flex-col md:flex-row gap-8 md:gap-6 items-start">
             {/* Bio */}
             <div className="text-surface space-y-5 text-base leading-relaxed flex-1">
-              <p>
-                My name is <span className="font-bold">Levon</span>, and I'm an embedded software developer based in Los Angeles, CA.
+              <p className="text-lg">
+                I'm an embedded software developer based in Los Angeles, CA.
               </p>
               <p>
                 In my free time, I play bass guitar, produce electronic music, and explore the intersection of sound, hardware, and user interaction. I believe the best tools come from keeping a precise balance between creativity and engineering, and equally nurturing both is very important to me.

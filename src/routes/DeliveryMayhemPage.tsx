@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { PageHeader } from '../components/common/SectionTitle'
 import { getProjectBySlug } from '../data/projects'
 
@@ -65,11 +66,6 @@ export default function DeliveryMayhemPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <img
-              src="/assets/images/prisonisland2.jpg"
-              alt="Prison Island game setup"
-              className="w-full rounded-lg"
-            />
-            <img
               src="/assets/images/prisonisland3.jpg"
               alt="Prison Island game board"
               className="w-full rounded-lg"
@@ -84,6 +80,11 @@ export default function DeliveryMayhemPage() {
               alt="Prison Island gameplay"
               className="w-full rounded-lg"
             />
+            <img
+              src="/assets/images/prisonisland2.jpg"
+              alt="Prison Island game setup"
+              className="w-full rounded-lg"
+            />
           </div>
         </section>
 
@@ -91,6 +92,11 @@ export default function DeliveryMayhemPage() {
         <div className="flex justify-center my-12">
           <div className="w-1/3 h-px bg-surface/20"></div>
         </div>
+
+        {/* Bottom Home Link */}
+        <Link to="/" className="text-surface hover:text-accent inline-block">
+          ← Home
+        </Link>
       </div>
     </div>
   )

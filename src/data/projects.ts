@@ -132,7 +132,7 @@ export interface NavItem {
 export const homeNavItems: NavItem[] = [
   {
     title: 'μLoop',
-    subtitle: 'MIDI-synced looper & sampler, made for live performance',
+    subtitle: 'MIDI-synced looper, sampler, & effects machine made for live performance',
     to: '/microloop',
   },
   {
