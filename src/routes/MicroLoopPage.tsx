@@ -85,7 +85,7 @@ export default function MicroLoopPage() {
           <div className="text-surface space-y-6 text-base leading-relaxed">
             <div className="flex justify-center my-8">
               <img
-                src="/assets/images/microloop-layout.png"
+                src="/assets/images/microloop1.png"
                 alt="MicroLoop layout diagram"
                 className="w-3/4 rounded-lg"
               />

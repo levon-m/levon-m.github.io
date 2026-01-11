@@ -10,6 +10,13 @@ export default function Home() {
     '/delivery-mayhem': ['C++', 'Arduino'],
   }), [])
 
+  const projectImages: Record<string, string> = useMemo(() => ({
+    '/microloop': '/assets/images/microloop_main.JPG',
+    '/bassmint': '/assets/images/bassmint_main.JPG',
+    '/voice': '/assets/images/voice_main.png',
+    '/delivery-mayhem': '/assets/images/prisonisland_main.jpg',
+  }), [])
+
   return (
     <div className="min-h-screen py-12 px-16 sm:px-24 lg:px-32">
       <div className="max-w-6xl mx-auto">
@@ -98,6 +105,7 @@ export default function Home() {
           {homeNavItems.map((item, index) => {
             const isImageLeft = index % 2 === 0
             const tags = projectTags[item.to] || []
+            const imageSrc = projectImages[item.to]
 
             // Skip the Bookmarks page from projects
             if (item.to === '/bookmarks') {
@@ -112,11 +120,13 @@ export default function Home() {
               >
                 <div className="relative bg-accent/10 rounded-2xl p-5 hover:bg-accent transition-none">
                   <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-5 items-center`}>
-                    {/* Image Placeholder */}
-                    <div className="w-full md:w-2/5 aspect-[4/3] bg-surface/10 rounded-lg flex items-center justify-center border border-surface/20">
-                      <span className="text-surface-light font-mono text-sm">
-                        [Project Image]
-                      </span>
+                    {/* Project Image */}
+                    <div className="w-full md:w-2/5 aspect-[4/3] rounded-lg overflow-hidden">
+                      <img
+                        src={imageSrc}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
 
                     {/* Project Info */}

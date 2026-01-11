@@ -79,6 +79,11 @@ export default function DeliveryMayhemPage() {
               alt="Prison Island game components"
               className="w-full rounded-lg"
             />
+            <img
+              src="/assets/images/prisonisland4.png"
+              alt="Prison Island gameplay"
+              className="w-full rounded-lg"
+            />
           </div>
         </section>
 
