@@ -137,7 +137,7 @@ export const homeNavItems: NavItem[] = [
   },
   {
     title: 'BassMINT',
-    subtitle: 'Bass guitar mount for real-time pitch + fret tracking over MIDI',
+    subtitle: 'Bridge-mounted optical sensor device that streams real-time tablature over MIDI',
     to: '/bassmint',
   },
   {
