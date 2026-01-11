@@ -72,13 +72,13 @@ export default function BassMINTPage() {
             </p>
 
             <img
-              src="/assets/images/bassmint2.png"
+              src="/assets/images/bassmint2.JPG"
               alt="BassMINT development"
               className="w-2/3 mx-auto rounded-lg"
             />
 
             <img
-              src="/assets/images/bassmint4.png"
+              src="/assets/images/bassmint4.JPG"
               alt="BassMINT hardware"
               className="w-2/3 mx-auto rounded-lg"
             />
@@ -110,7 +110,7 @@ export default function BassMINTPage() {
             />
 
             <img
-              src="/assets/images/bassmint3.png"
+              src="/assets/images/bassmint3.JPG"
               alt="BassMINT prototype"
               className="w-2/3 mx-auto rounded-lg"
             />
