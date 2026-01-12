@@ -14,7 +14,7 @@ export default {
           dark: '#5a8872',
         },
         surface: {
-          DEFAULT: '#3d405b', // Twilight Indigo
+          DEFAULT: '#2c2e45', // Twilight Indigo (darker)
           light: '#4f5270',
           dark: '#2a2c3f',
         },
