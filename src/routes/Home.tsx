@@ -13,7 +13,7 @@ export default function Home() {
   const projectImages: Record<string, string> = useMemo(() => ({
     '/microloop': '/assets/images/microloop_main.JPG',
     '/bassmint': '/assets/images/bassmint_main.JPG',
-    '/voice': '/assets/images/voice_main.png',
+    '/voice': '/assets/images/voice_main.jpg',
     '/delivery-mayhem': '/assets/images/prisonisland_main.jpg',
   }), [])
 
@@ -26,7 +26,7 @@ export default function Home() {
             Hi, I'm Levon
           </h1>
 
-          <div className="flex flex-col md:flex-row gap-8 md:gap-6 items-start">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-6 md:items-center">
             {/* Bio */}
             <div className="text-surface space-y-5 text-base leading-relaxed flex-1">
               <p className="text-lg">
@@ -83,11 +83,13 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Bio Image Placeholder */}
-            <div className="hidden md:flex md:w-96 md:h-[526px] bg-surface/10 rounded-2xl items-center justify-center border border-surface/20 flex-shrink-0">
-              <span className="text-surface-light font-mono text-sm">
-                [Bio Image]
-              </span>
+            {/* Bio Image */}
+            <div className="hidden md:block md:w-96 flex-shrink-0">
+              <img
+                src="/assets/images/bio.jpg"
+                alt="Levon Melkonyan"
+                className="w-full h-auto rounded-2xl"
+              />
             </div>
           </div>
         </section>

@@ -181,7 +181,7 @@ export default function MicroLoopPage() {
             <img
               src="/assets/images/microloop2.svg"
               alt="MicroLoop design diagram"
-              className="w-2/3 mx-auto rounded-lg"
+              className="w-full rounded-lg"
             />
           </div>
         </section>
