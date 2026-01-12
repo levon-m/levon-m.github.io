@@ -40,6 +40,7 @@ export default function LinksPage() {
               <li><a href="https://jakobabesser.github.io/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Jakob Abeßer</a></li>
               <li><a href="https://www.notreble.com/buzz/2009/06/24/ask-damian-erskine/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Ask Damian Erskine</a></li>
               <li><a href="https://www.notreble.com/buzz/2018/06/27/practicing-scales-vs-arpeggios/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Practicing Scales vs. Arpeggios</a></li>
+              <li><a href="https://legowelt.org/cyberzine/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">LEGOWELT CYBER ZINES</a></li>
             </ul>
           </section>
 
