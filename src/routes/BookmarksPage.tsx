@@ -17,10 +17,10 @@ export default function LinksPage() {
         </div>
 
         {/* Content */}
-        <div className="text-surface space-y-8 text-base leading-relaxed">
+        <div className="text-surface space-y-8 text-lg leading-relaxed">
           <section>
-            <h2 className="text-2xl font-bold text-surface mb-4">Articles, Lists & Blogs</h2>
-            <ul className="space-y-2 pl-6 list-none">
+            <h2 className="text-3xl font-bold text-surface mb-6">Articles, Lists & Blogs</h2>
+            <ul className="space-y-2 pl-6 list-disc">
               <li><a href="https://github.com/olilarkin/awesome-musicdsp?tab=readme-ov-file" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">More Awesome Music DSP*</a></li>
               <li><a href="https://www.paulgraham.com/do.html" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">What To Do</a></li>
               <li><a href="https://notes.eatonphil.com/2024-08-24-obsession.html" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Obsession</a></li>
@@ -44,8 +44,8 @@ export default function LinksPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-surface mb-4">Projects, Products, & Tools</h2>
-            <ul className="space-y-2 pl-6 list-none">
+            <h2 className="text-3xl font-bold text-surface mb-6">Projects, Products, & Tools</h2>
+            <ul className="space-y-2 pl-6 list-disc">
               <li><a href="https://github.com/dagargo/overwitch" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Overwitch</a></li>
               <li><a href="https://articles.roland.com/introducing-project-lydia/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Project LYDIA</a></li>
               <li><a href="https://www.giadamusic.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Giada</a></li>
@@ -65,8 +65,8 @@ export default function LinksPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-surface mb-4">Videos</h2>
-            <ul className="space-y-2 pl-6 list-none">
+            <h2 className="text-3xl font-bold text-surface mb-6">Videos</h2>
+            <ul className="space-y-2 pl-6 list-disc">
               <li><a href="https://www.youtube.com/watch?v=p8u_k2LIZyo" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Fast Inverse Square Root — A Quake III Algorithm</a></li>
               <li><a href="https://www.youtube.com/watch?v=Tvf7VVH53-4" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">How to Write Bug-Free, Real-Time Audio C++ Code? - Jan Wilczek - ADC23</a></li>
               <li><a href="https://www.youtube.com/watch?v=kwnjF4U8_I0" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Vlad Voina - Loopers and bloopers</a></li>
@@ -78,8 +78,8 @@ export default function LinksPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-surface mb-4">Books</h2>
-            <ul className="space-y-2 pl-6 list-none">
+            <h2 className="text-3xl font-bold text-surface mb-6">Books</h2>
+            <ul className="space-y-2 pl-6 list-disc">
               <li><a href="https://www.dspguide.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">The Scientist and Engineer's Guide to Digital Signal Processing - Steven W. Smith</a></li>
               <li><a href="https://www.oreilly.com/library/view/practical-electronics-for/9781259587559/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Practical Electronics for Inventors - Paul Scherz, Simon Monk</a></li>
               <li><a href="https://www.oreilly.com/library/view/making-embedded-systems/9781098151539/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Making Embedded Systems - Elicia White</a></li>
