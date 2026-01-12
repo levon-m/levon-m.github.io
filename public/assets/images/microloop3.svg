@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 400" width="580" height="400">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#555"/>
+    </marker>
+  </defs>
+
+  <rect width="580" height="400" fill="#fff"/>
+
+  <!-- AUDIO SIGNAL CHAIN -->
+  <text x="20" y="24" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">AUDIO SIGNAL CHAIN</text>
+  <text x="175" y="24" font-family="Arial, sans-serif" font-size="9" fill="#777">44.1kHz | 128 samples/block | Stereo</text>
+
+  <rect x="20" y="35" width="540" height="50" rx="4" fill="none" stroke="#bbb" stroke-width="1"/>
+
+  <!-- Audio boxes -->
+  <rect x="30" y="45" width="55" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="57" y="64" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#222" text-anchor="middle">I2S In</text>
+
+  <line x1="90" y1="60" x2="105" y2="60" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="110" y="45" width="65" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="142" y="57" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#222" text-anchor="middle">Timebase</text>
+  <text x="142" y="68" font-family="Arial, sans-serif" font-size="6" fill="#666" text-anchor="middle">sample count</text>
+
+  <line x1="180" y1="60" x2="195" y2="60" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="200" y="45" width="65" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="232" y="57" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#222" text-anchor="middle">Stutter</text>
+  <text x="232" y="68" font-family="Arial, sans-serif" font-size="6" fill="#666" text-anchor="middle">4096 samples</text>
+
+  <line x1="270" y1="60" x2="285" y2="60" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="290" y="45" width="65" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="322" y="57" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#222" text-anchor="middle">Freeze</text>
+  <text x="322" y="68" font-family="Arial, sans-serif" font-size="6" fill="#666" text-anchor="middle">512 samples</text>
+
+  <line x1="360" y1="60" x2="375" y2="60" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="380" y="45" width="65" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="412" y="57" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#222" text-anchor="middle">Choke</text>
+  <text x="412" y="68" font-family="Arial, sans-serif" font-size="6" fill="#666" text-anchor="middle">10ms fade</text>
+
+  <line x1="450" y1="60" x2="465" y2="60" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="470" y="45" width="55" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="497" y="64" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#222" text-anchor="middle">I2S Out</text>
+
+  <!-- I/O SECTION -->
+  <text x="20" y="110" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">I/O &amp; THREADS</text>
+
+  <rect x="20" y="120" width="540" height="260" rx="4" fill="none" stroke="#bbb" stroke-width="1"/>
+
+  <!-- Column headers -->
+  <text x="100" y="140" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#666" text-anchor="middle">HARDWARE</text>
+  <text x="270" y="140" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#666" text-anchor="middle">I/O THREADS</text>
+  <text x="450" y="140" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#666" text-anchor="middle">CORE</text>
+
+  <!-- Row 1: MIDI -->
+  <rect x="35" y="155" width="130" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="100" y="175" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#222" text-anchor="middle">MIDI DIN</text>
+
+  <line x1="170" y1="170" x2="195" y2="170" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="200" y="155" width="130" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="265" y="175" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#222" text-anchor="middle">MIDI Thread</text>
+
+  <line x1="335" y1="170" x2="375" y2="170" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="380" y="155" width="130" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="445" y="175" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#222" text-anchor="middle">Timebase</text>
+
+  <!-- Row 2: Buttons -->
+  <rect x="35" y="200" width="130" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="100" y="220" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#222" text-anchor="middle">Neokey Buttons</text>
+
+  <line x1="170" y1="215" x2="195" y2="215" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="200" y="200" width="130" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="265" y="220" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#222" text-anchor="middle">Neokey Thread</text>
+
+  <line x1="335" y1="215" x2="375" y2="245" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Row 3: Encoders -->
+  <rect x="35" y="245" width="130" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="100" y="265" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#222" text-anchor="middle">MCP23017 Encoders</text>
+
+  <line x1="170" y1="260" x2="195" y2="260" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="200" y="245" width="130" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="265" y="265" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#222" text-anchor="middle">Encoder Thread</text>
+
+  <line x1="335" y1="260" x2="375" y2="260" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- App Thread (centered between Timebase and EffectManager) -->
+  <rect x="380" y="235" width="130" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="445" y="255" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#222" text-anchor="middle">App Thread</text>
+
+  <!-- Row 4: Display (reverse direction) -->
+  <rect x="35" y="290" width="130" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="100" y="310" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#222" text-anchor="middle">SSD1306 OLED</text>
+
+  <line x1="195" y1="305" x2="170" y2="305" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="200" y="290" width="130" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="265" y="310" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#222" text-anchor="middle">Display Thread</text>
+
+  <line x1="375" y1="305" x2="335" y2="305" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="380" y="290" width="130" height="30" rx="3" fill="#f0f0f0" stroke="#444" stroke-width="1"/>
+  <text x="445" y="310" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#222" text-anchor="middle">EffectManager</text>
+
+  <!-- Core vertical connections -->
+  <line x1="445" y1="188" x2="445" y2="232" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="445" y1="268" x2="445" y2="287" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Audio Timebase to Core Timebase (dashed) -->
+  <path d="M 142 78 L 142 97 L 520 97 L 520 170 L 513 170" stroke="#999" stroke-width="1" stroke-dasharray="3,2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- EffectManager to Audio Choke (dashed) -->
+  <path d="M 515 305 L 535 305 L 535 102 L 412 102 L 412 78" stroke="#999" stroke-width="1" stroke-dasharray="3,2" fill="none" marker-end="url(#arrow)"/>
+
+</svg>

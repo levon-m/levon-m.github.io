@@ -62,10 +62,9 @@ export default function MicroLoopPage() {
             Demo
           </h2>
           <div className="aspect-video w-full">
-            {/* TODO: Replace with actual YouTube video ID */}
             <iframe
               className="w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID"
+              src="https://www.youtube.com/embed/drOhE85E4RI"
               title="MicroLoop Demo"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -172,6 +171,18 @@ export default function MicroLoopPage() {
             <p>
               One of the biggest challenges was designing the system to be deterministic, with absolutely no audio glitches, and a responsive interface. A multithreaded design was the clear choice for this, giving each element like the MIDI, buttons, encoders, etc. their own processing space. My code absolutely could not block anything else from running and had to stay atomic, especially in the audio thread. If the audio cuts out or crackles, the whole product is basically useless. Anything I used for DSP, especially the main loop buffers, had to be allocated beforehand, as dynamic allocation would make the performance very sluggish and at risk of memory leaks. For the thread concurrency, I used the <a href="https://github.com/ftrias/TeensyThreads" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy Threads library</a> instead of a full RTOS. Of course, it is made specifically for the Teensy, but it also excels at providing very lightweight preemptive multithreading without the extra overhead of a full RTOS like heavy synchronization primitives. Other housekeeping included using CMake and Ninja instead of the Arduino IDE, which makes for more reproducible and cross-compatible builds.
             </p>
+
+            <img
+              src="/assets/images/microloop3.svg"
+              alt="MicroLoop architecture diagram"
+              className="w-2/3 mx-auto rounded-lg"
+            />
+
+            <img
+              src="/assets/images/microloop2.svg"
+              alt="MicroLoop design diagram"
+              className="w-2/3 mx-auto rounded-lg"
+            />
           </div>
         </section>
 
