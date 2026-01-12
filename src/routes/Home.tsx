@@ -84,7 +84,7 @@ export default function Home() {
             </div>
 
             {/* Bio Image Placeholder */}
-            <div className="w-full md:w-96 self-stretch bg-surface/10 rounded-2xl flex items-center justify-center border border-surface/20 flex-shrink-0">
+            <div className="hidden md:flex md:w-96 md:h-[526px] bg-surface/10 rounded-2xl items-center justify-center border border-surface/20 flex-shrink-0">
               <span className="text-surface-light font-mono text-sm">
                 [Bio Image]
               </span>
