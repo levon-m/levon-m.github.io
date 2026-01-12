@@ -69,3 +69,4 @@ NUL
 # Misc
 *.pem
 *.local
+.claude/
