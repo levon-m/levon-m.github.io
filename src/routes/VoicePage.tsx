@@ -57,15 +57,9 @@ export default function VoicePage() {
             </p>
 
             <img
-              src="/assets/images/voice4.jpg"
-              alt="VOICE project visual"
-              className="w-2/3 mx-auto rounded-lg"
-            />
-
-            <img
               src="/assets/images/voice5.jpg"
               alt="VOICE project interface"
-              className="w-2/3 mx-auto rounded-lg"
+              className="w-full rounded-lg"
             />
           </div>
         </section>
