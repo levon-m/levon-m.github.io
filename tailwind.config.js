@@ -9,7 +9,7 @@ export default {
       colors: {
         // Color palette: Eggshell, Burnt Peach, Twilight Indigo, Muted Teal, Apricot Cream
         accent: {
-          DEFAULT: '#81b29a', // Muted Teal (links)
+          DEFAULT: '#6EB593', // Muted Teal (links)
           light: '#a8cfc0',
           dark: '#5a8872',
         },
