@@ -33,7 +33,7 @@ export default function Home() {
                 I'm an embedded software engineer based in Los Angeles, CA.
               </p>
               <p>
-                I play bass guitar, produce electronic music, and build tools for making and performing music in a more expressive way. Currently, I'm exploring human-computer interaction, music information retrieval, and embedded ML for real-time systems. I love interdisciplinary work between engineering and creative practice, and I'am always trying to strike the perfect balance.
+                I play bass guitar, produce electronic music, and build tools for making and performing music in a more expressive way. Currently, I'm exploring human-computer interaction, music information retrieval, and embedded ML for real-time systems. I love interdisciplinary work between engineering and creative practice, and I'm always trying to strike the perfect balance.
               </p>
               <p>
                 I hold a BSc in Computer Science from <a href="https://www.calpoly.edu/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Cal Poly SLO</a>, with some MSc-level coursework done during an exchange program at <a href="https://www.chalmers.se/en/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Chalmers University of Technology</a> in Gothenburg, Sweden. I am also an incoming MSc student in Sound and Music Computing at <a href="https://www.upf.edu/en/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Universitat Pompeu Fabra</a> in Barcelona, Spain, beginning Fall 2026.
