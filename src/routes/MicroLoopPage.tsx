@@ -15,49 +15,29 @@ export default function MicroLoopPage() {
       <div className="max-w-5xl mx-auto">
         <PageHeader
           title={project.name}
+          titleHref={project.links.github}
           backTo="/"
           backLabel="Home"
         />
-        <div className="-mt-12 mb-12">
-          <p className="text-xl text-surface leading-relaxed">
-            MIDI-synced looper, sampler, & effects machine made for live performance
-          </p>
-          {project.links.github && (
-            <a
-              href={project.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline text-accent hover:italic text-xl"
-            >
-              GitHub
-            </a>
-          )}
-        </div>
 
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* Background */}
-        <section className="mb-16">
+        <section className="mb-0">
           <h2 className="text-3xl font-bold text-surface mb-6">
             Background
           </h2>
           <div className="text-surface space-y-5 text-base leading-relaxed">
             <p>
-              I wanted a looper that can sample live audio, but also quantize the capture and playback to an external MIDI clock, like from a drum machine. Put more simply, I needed all interactions with the loops to stay locked to the grid. Quantization being the key feature, I couldn't find it in a desktop looper that wasn't upwards of $400, so I decided to build my own using the <a href="https://www.pjrc.com/store/teensy41.html" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy 4.1</a> microcontroller. Aimed at being a live performance effects box (for my use case), I prioritized immediacy and ease of use with minimal menu diving, as users can't sift through a giant menu during a live performance. The effects I chose were based around the kinds of electronic music that I personally like to play, although it can be used for just about anything with enough creativity. All in all, it came out to just $120! (and hundreds of hours of debugging and developing)
+              I wanted a looper that can sample live audio, but also quantize the capture and playback to an external MIDI clock, like from a drum machine. Put more simply, I needed all interactions with the loops to stay locked to the grid. Quantization being the key feature, I couldn't find it in a desktop looper that wasn't upwards of $400, so I decided to build my own using the <a href="https://www.pjrc.com/store/teensy41.html" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">Teensy 4.1</a> microcontroller. Aimed at being a live performance effects box (for my use case), I prioritized immediacy and ease of use with minimal menu diving, as users can't sift through a giant menu during a live performance. The effects I chose were based around the kinds of electronic music that I personally like to play, although it can be used for just about anything with enough creativity. All in all, it came out to just $120! (and hundreds of hours of debugging and developing)
             </p>
           </div>
         </section>
 
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* Demo */}
-        <section className="mb-16">
+        <section className="mb-0">
           <h2 className="text-3xl font-bold text-surface mb-6">
             Demo
           </h2>
@@ -72,13 +52,10 @@ export default function MicroLoopPage() {
           </div>
         </section>
 
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* How to Play */}
-        <section className="mb-16">
+        <section className="mb-0">
           <h2 className="text-3xl font-bold text-surface mb-6">
             How to Play
           </h2>
@@ -86,7 +63,7 @@ export default function MicroLoopPage() {
             <img
               src="/assets/images/microloop1.png"
               alt="MicroLoop layout diagram"
-              className="w-2/3 mx-auto rounded-lg"
+              className="w-3/5 mx-auto rounded-lg"
             />
             <p>
               The idea is that you play audio into the device, record up to four different loops, and play them back over the original audio with the STUTTER effect. You have a "scratch work space", where you test out different loops, and commit them to one of four preset slots when you like what you hear. Alongside this, you have a FREEZE effect that sustains the last 30ms of audio, and a CHOKE effect that acts as an instant mute. Each effect has it's own settings menu, where you can toggle different capture/playback parameters to either be quantized to the MIDI clock, or activated freehand. There is also a Global Quantization menu, where you choose between 8 different beat subdivisions for the quantization to snap to.
@@ -154,45 +131,39 @@ export default function MicroLoopPage() {
           </div>
         </section>
 
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* Design and Architecture */}
-        <section className="mb-16">
+        <section className="mb-0">
           <h2 className="text-3xl font-bold text-surface mb-6">
             Design and Architecture
           </h2>
           <div className="text-surface space-y-5 text-base leading-relaxed">
             <p>
-              This was my first time facing product design at this scale and across software, hardware, electrical, and even mechanical domains, but it was one of my most rewarding experiences. For the brain, I chose the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy 4.1</a> microcontroller, as it has a very strong audio ecosystem, and a powerful Cortex-M7 core, giving me plenty of processing headroom for experimenting. Speaking of the audio ecosystem, I used the <a href="https://www.pjrc.com/store/teensy3_audio.html" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy Audio Adapter board</a> with the SGTL5000 codec over I2S, which gave me 16-bit, 44.1 kHz audio to work with over stereo line I/O. More importantly, this allowed me to use the <a href="https://www.pjrc.com/teensy/td_libs_Audio.html" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy Audio library</a>, which abstracted a lot of the register-level interactions with the DAC, like buffering the audio with DMA (I made my own driver that somewhat worked, but ultimately went with the library's implementation).
+              This was my first time facing product design at this scale and across software, hardware, electrical, and even mechanical domains, but it was one of my most rewarding experiences. For the brain, I chose the <a href="https://www.pjrc.com/teensy/" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">Teensy 4.1</a> microcontroller, as it has a very strong audio ecosystem, and a powerful Cortex-M7 core, giving me plenty of processing headroom for experimenting. Speaking of the audio ecosystem, I used the <a href="https://www.pjrc.com/store/teensy3_audio.html" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">Teensy Audio Adapter board</a> with the SGTL5000 codec over I2S, which gave me 16-bit, 44.1 kHz audio to work with over stereo line I/O. More importantly, this allowed me to use the <a href="https://www.pjrc.com/teensy/td_libs_Audio.html" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">Teensy Audio library</a>, which abstracted a lot of the register-level interactions with the DAC, like buffering the audio with DMA (I made my own driver that somewhat worked, but ultimately went with the library's implementation).
             </p>
             <p>
-              One of the biggest challenges was designing the system to be deterministic, with absolutely no audio glitches, and a responsive interface. A multithreaded design was the clear choice for this, giving each element like the MIDI, buttons, encoders, etc. their own processing space. My code absolutely could not block anything else from running and had to stay atomic, especially in the audio thread. If the audio cuts out or crackles, the whole product is basically useless. Anything I used for DSP, especially the main loop buffers, had to be allocated beforehand, as dynamic allocation would make the performance very sluggish and at risk of memory leaks. For the thread concurrency, I used the <a href="https://github.com/ftrias/TeensyThreads" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy Threads library</a> instead of a full RTOS. Of course, it is made specifically for the Teensy, but it also excels at providing very lightweight preemptive multithreading without the extra overhead of a full RTOS like heavy synchronization primitives. Other housekeeping included using CMake and Ninja instead of the Arduino IDE, which makes for more reproducible and cross-compatible builds.
+              One of the biggest challenges was designing the system to be deterministic, with absolutely no audio glitches, and a responsive interface. A multithreaded design was the clear choice for this, giving each element like the MIDI, buttons, encoders, etc. their own processing space. My code absolutely could not block anything else from running and had to stay atomic, especially in the audio thread. If the audio cuts out or crackles, the whole product is basically useless. Anything I used for DSP, especially the main loop buffers, had to be allocated beforehand, as dynamic allocation would make the performance very sluggish and at risk of memory leaks. For the thread concurrency, I used the <a href="https://github.com/ftrias/TeensyThreads" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">Teensy Threads library</a> instead of a full RTOS. Of course, it is made specifically for the Teensy, but it also excels at providing very lightweight preemptive multithreading without the extra overhead of a full RTOS like heavy synchronization primitives. Other housekeeping included using CMake and Ninja instead of the Arduino IDE, which makes for more reproducible and cross-compatible builds.
             </p>
-
-            <img
-              src="/assets/images/microloop3.svg"
-              alt="MicroLoop architecture diagram"
-              className="w-2/3 mx-auto rounded-lg"
-            />
 
             <img
               src="/assets/images/microloop2.svg"
               alt="MicroLoop design diagram"
-              className="w-full rounded-lg"
+              className="w-[92%] mx-auto rounded-lg"
+            />
+
+            <img
+              src="/assets/images/microloop3.svg"
+              alt="MicroLoop architecture diagram"
+              className="w-[68%] mx-auto rounded-lg"
             />
           </div>
         </section>
 
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* Future Work */}
-        <section className="mb-16">
+        <section className="mb-0">
           <h2 className="text-3xl font-bold text-surface mb-6">
             Future Work
           </h2>
@@ -206,13 +177,10 @@ export default function MicroLoopPage() {
           </div>
         </section>
 
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* Hardware */}
-        <section className="mb-16">
+        <section className="mb-0">
           <h2 className="text-3xl font-bold text-surface mb-6">
             Hardware
           </h2>
@@ -231,16 +199,15 @@ export default function MicroLoopPage() {
           </ul>
         </section>
 
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* Bottom Home Link */}
-        <Link to="/" className="underline text-accent hover:italic text-lg inline-block">
+        <Link to="/" className="text-accent hover-slant text-lg inline-block">
           &lt;- Home
         </Link>
       </div>
     </div>
   )
 }
+
+

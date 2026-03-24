@@ -34,6 +34,7 @@ interface PageHeaderProps {
   subtitle?: string
   backTo?: string
   backLabel?: string
+  titleHref?: string
 }
 
 export function PageHeader({
@@ -41,17 +42,29 @@ export function PageHeader({
   subtitle,
   backTo = '/',
   backLabel = 'Back',
+  titleHref,
 }: PageHeaderProps) {
   return (
-    <div className="mb-16">
+    <div className="mb-0">
       <Link
         to={backTo}
-        className="underline text-accent hover:italic text-lg mb-8 inline-block"
+        className="text-accent hover-slant text-lg mb-8 inline-block"
       >
         &lt;- {backLabel}
       </Link>
-      <h1 className="text-5xl sm:text-6xl font-bold text-surface mb-4">
-        {title}
+      <h1 className="text-6xl sm:text-7xl font-normal text-surface text-center mb-4">
+        {titleHref ? (
+          <a
+            href={titleHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover-slant"
+          >
+            {title}
+          </a>
+        ) : (
+          title
+        )}
       </h1>
       {subtitle && <p className="text-surface text-lg leading-relaxed">{subtitle}</p>}
     </div>
@@ -69,3 +82,5 @@ export function AsciiDivider({ className = '' }: { className?: string }) {
     </div>
   )
 }
+
+

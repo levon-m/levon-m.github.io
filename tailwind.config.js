@@ -9,22 +9,22 @@ export default {
       colors: {
         // Color palette: Eggshell, Burnt Peach, Twilight Indigo, Muted Teal, Apricot Cream
         accent: {
-          DEFAULT: '#6EB593', // Muted Teal (links)
-          light: '#a8cfc0',
-          dark: '#5a8872',
+          DEFAULT: '#93B26F',
+          light: '#adc78e',
+          dark: '#758d58',
         },
         surface: {
-          DEFAULT: '#2c2e45', // Twilight Indigo (darker)
-          light: '#4f5270',
-          dark: '#2a2c3f',
+          DEFAULT: '#000000',
+          light: '#1f1f1f',
+          dark: '#000000',
         },
-        background: '#FAF5F0', // Eggshell
+        background: '#FFFFFF',
         peach: '#e07a5f',      // Burnt Peach
         cream: '#f2cc8f',      // Apricot Cream
       },
       fontFamily: {
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        mono: ['Verdana', 'Geneva', 'sans-serif'],
+        sans: ['Verdana', 'Geneva', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',

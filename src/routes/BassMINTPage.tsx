@@ -15,84 +15,67 @@ export default function BassMINTPage() {
       <div className="max-w-5xl mx-auto">
         <PageHeader
           title={project.name}
+          titleHref={project.links.github}
           backTo="/"
           backLabel="Home"
         />
-        <div className="-mt-12 mb-12">
-          <p className="text-xl text-surface leading-relaxed">
-            Bridge-mounted optical sensor device that streams real-time tablature over MIDI
-          </p>
-          {project.links.github && (
-            <a
-              href={project.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline text-accent hover:italic text-xl"
-            >
-              GitHub
-            </a>
-          )}
-        </div>
 
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* Background */}
-        <section className="mb-16">
+        <section className="mb-0">
           <h2 className="text-3xl font-bold text-surface mb-6">
             Background
           </h2>
           <div className="text-surface space-y-5 text-base leading-relaxed">
             <p>
-              Bass (M)ount for (I)nfrared (N)ote (T)ranscription is a device built with the <a href="https://www.pjrc.com/store/teensy40.html" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Teensy 4.0</a> that slides onto your bass guitar bridge and streams monophonic tablature in real-time via MIDI. This information can be utilized by software like DAW plugins to create practice, transcription, or education tools. The device currently only supports 4-string bass guitars with the Fender Jazz-style bridge, with up to 24 frets.
+              Bass (M)ount for (I)nfrared (N)ote (T)ranscription is a device built with the <a href="https://www.pjrc.com/store/teensy40.html" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">Teensy 4.0</a> that slides onto your bass guitar bridge and streams monophonic tablature in real-time via MIDI. This information can be utilized by software like DAW plugins to create practice, transcription, or education tools. The device currently only supports 4-string bass guitars with the Fender Jazz-style bridge, with up to 24 frets.
             </p>
             <p>
               Pitch is a surprisingly human concept, and as it turns out, computers tend to struggle with it, especially on instruments where real-world edge cases are introduced (like attack transients, inharmonicity, or just having poor form). Even with lots of similar tools that include pitch detection for analog waveforms, pitch detection is far from perfect, and always includes some sort of trade-offs, usually between latency and accuracy. A waveform from an instrument will never be perfect, and will include all kinds of noise, harmonics, and other inconsistencies that muddy the fundamental frequency and make life difficult for the algorithm. This is especially true in the case of stringed instruments like a guitar or bass, where the same pitch can be played on multiple parts of the fretboard. Many similar transcription or visualization tools don't really address this fact, either disregarding it without any visualization, or visualizing a single note played in multiple different places on the fretboard. This, of course, isn't ideal for the user. Especially if the user is a beginner, intuitive visualization is critical for successful practice or learning.
-            </p>
-          </div>
-        </section>
-
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
-
-        {/* Development */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-surface mb-6">
-            Development
-          </h2>
-          <div className="text-surface space-y-5 text-base leading-relaxed">
-            <p>
-              I tried several different approaches to this problem. Conceptually, making this work with only the audio waveform is the ideal scenario. But how can an algorithm differentiate between two waveforms with the same frequency? We as people can obviously see that these notes are played on different frets and strings, and also have slightly different sound qualities. While the frequency, assuming the instrument is perfectly tuned and intonated, is the exact same, these different "qualities" of the sound, called timbre, can be further analyzed. This led me to a machine learning approach, where a model would be trained on an audio <a href="https://www.idmt.fraunhofer.de/en/publications/datasets/bass.html" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">dataset of bass notes</a> with various expression styles. The upper harmonics, which are the higher-frequency partials above the fundamental frequency (the lowest frequency component associated with the perceived pitch), were compared for similarities. Either the dataset was too limited, or the timbral qualities were inconsistent due to human error in playing, but this approach yielded pretty low accuracy. In the future I will definitely revisit this approach and try again from a different angle, since it's been proven to work to an extent by others.
-            </p>
-            <p>
-              Eventually, I settled on a physical device. The idea was that the device would slide on and grasp onto the bass bridge, where a user could easily mount it, and would detect the string and fret in a two-phase system. Each string has its own <a href="https://www.ti.com/lit/ds/symlink/opt101.pdf" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">photodiode and amplifier sensor</a> with an infrared LED above it. The string is in between them, making a break-beam optical light path that uses the string's shadow/displacement to modulate a continuous signal from a pluck. This would allow for individual string detection with envelope followers, which already greatly reduces the work that the pitch detector has to do with a much more narrow frequency range. With support for up to a 24-fret bass, it reduces the possible octaves of a note down to just two. After the string is detected, the actual pitch detection is run. One of the benefits of using photodiode-amplifier sensors is that the break-beam optical waveform is clean enough to actually run the pitch algorithms on. Initially, I went with a <a href="https://www.americanpiezo.com/blog/how-piezoelectric-sensors-work/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">piezoelectric</a> vibration approach, but this proved not to be viable in an easy-to-mount scenario for the user (they had a severe lack of preload, and could not make solid enough contact with the bridge). The system uses the <a href="https://www.cs.otago.ac.nz/graphics/Geoff/tartini/papers/A_Smarter_Way_to_Find_Pitch.pdf" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">NSDF (Normalized Square Difference Function)</a> to detect the frequency, but searches for peaks in two separate lag ranges (frets 0-11 and 12-24), since bass harmonics often cause octave confusion. A <a href="https://en.wikipedia.org/wiki/Recursive_Bayesian_estimation" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Bayesian filter</a> estimates which octave is being played by combining the strength of peaks in each band with weighted hand-span coefficients that penalize physically unlikely fret jumps in a short amount of time (like jumping 15 frets in one note). This approach goes beyond simple pitch detection by adding classification as well, and tries to address the octave ambiguity problem instead of just picking the strongest peak.
             </p>
 
             <img
               src="/assets/images/bassmint2.JPG"
               alt="BassMINT development"
-              className="w-2/3 mx-auto rounded-lg"
+              className="w-3/5 mx-auto rounded-lg"
+            />
+          </div>
+        </section>
+
+        <div className="my-10" aria-hidden="true" />
+
+        {/* Development */}
+        <section className="mb-0">
+          <h2 className="text-3xl font-bold text-surface mb-6">
+            Development
+          </h2>
+          <div className="text-surface space-y-5 text-base leading-relaxed">
+            <p>
+              I tried several different approaches to this problem. Conceptually, making this work with only the audio waveform is the ideal scenario. But how can an algorithm differentiate between two waveforms with the same frequency? We as people can obviously see that these notes are played on different frets and strings, and also have slightly different sound qualities. While the frequency, assuming the instrument is perfectly tuned and intonated, is the exact same, these different "qualities" of the sound, called timbre, can be further analyzed. This led me to a machine learning approach, where a model would be trained on an audio <a href="https://www.idmt.fraunhofer.de/en/publications/datasets/bass.html" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">dataset of bass notes</a> with various expression styles. The upper harmonics, which are the higher-frequency partials above the fundamental frequency (the lowest frequency component associated with the perceived pitch), were compared for similarities. Either the dataset was too limited, or the timbral qualities were inconsistent due to human error in playing, but this approach yielded pretty low accuracy. In the future I will definitely revisit this approach and try again from a different angle, since it's been proven to work to an extent by others.
+            </p>
+            <p>
+              Eventually, I settled on a physical device. The idea was that the device would slide on and grasp onto the bass bridge, where a user could easily mount it, and would detect the string and fret in a two-phase system. Each string has its own <a href="https://www.ti.com/lit/ds/symlink/opt101.pdf" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">photodiode and amplifier sensor</a> with an infrared LED above it. The string is in between them, making a break-beam optical light path that uses the string's shadow/displacement to modulate a continuous signal from a pluck. This would allow for individual string detection with envelope followers, which already greatly reduces the work that the pitch detector has to do with a much more narrow frequency range. With support for up to a 24-fret bass, it reduces the possible octaves of a note down to just two. After the string is detected, the actual pitch detection is run. One of the benefits of using photodiode-amplifier sensors is that the break-beam optical waveform is clean enough to actually run the pitch algorithms on. Initially, I went with a <a href="https://www.americanpiezo.com/blog/how-piezoelectric-sensors-work/" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">piezoelectric</a> vibration approach, but this proved not to be viable in an easy-to-mount scenario for the user (they had a severe lack of preload, and could not make solid enough contact with the bridge). The system uses the <a href="https://www.cs.otago.ac.nz/graphics/Geoff/tartini/papers/A_Smarter_Way_to_Find_Pitch.pdf" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">NSDF (Normalized Square Difference Function)</a> to detect the frequency, but searches for peaks in two separate lag ranges (frets 0-11 and 12-24), since bass harmonics often cause octave confusion. A <a href="https://en.wikipedia.org/wiki/Recursive_Bayesian_estimation" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">Bayesian filter</a> estimates which octave is being played by combining the strength of peaks in each band with weighted hand-span coefficients that penalize physically unlikely fret jumps in a short amount of time (like jumping 15 frets in one note). This approach goes beyond simple pitch detection by adding classification as well, and tries to address the octave ambiguity problem instead of just picking the strongest peak.
+            </p>
+
+            <img
+              src="/assets/images/bassmint3.JPG"
+              alt="BassMINT prototype"
+              className="w-3/5 mx-auto rounded-lg"
             />
 
             <img
               src="/assets/images/bassmint4.JPG"
               alt="BassMINT hardware"
-              className="w-2/3 mx-auto rounded-lg"
+              className="w-3/5 mx-auto rounded-lg"
             />
           </div>
         </section>
 
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* Future Work */}
-        <section className="mb-16">
+        <section className="mb-0">
           <h2 className="text-3xl font-bold text-surface mb-6">
             Future Work
           </h2>
@@ -105,23 +88,14 @@ export default function BassMINTPage() {
             </p>
 
             <img
-              src="/assets/images/bassmint3.JPG"
-              alt="BassMINT prototype"
-              className="w-2/3 mx-auto rounded-lg"
-            />
-
-            <img
               src="/assets/images/bassmint1.png"
               alt="BassMINT future iteration"
-              className="w-2/3 mx-auto rounded-lg"
+              className="w-3/5 mx-auto rounded-lg"
             />
           </div>
         </section>
 
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* Resources */}
         <section>
@@ -134,42 +108,42 @@ export default function BassMINTPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <a href="https://www.researchgate.net/publication/347921033_Low-Latency_f0_Estimation_for_the_Finger_Plucked_Electric_Bass_Guitar_Using_the_Absolute_Difference_Function" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">
+                <a href="https://www.researchgate.net/publication/347921033_Low-Latency_f0_Estimation_for_the_Finger_Plucked_Electric_Bass_Guitar_Using_the_Absolute_Difference_Function" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">
                   Low-Latency f0 Estimation for the Finger Plucked Electric Bass Guitar Using the Absolute Difference Function
                 </a>
               </li>
               <li>
-                <a href="https://ieeexplore.ieee.org/document/6616120" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">
+                <a href="https://ieeexplore.ieee.org/document/6616120" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">
                   Real-time guitar string detection for music education software
                 </a>
               </li>
               <li>
-                <a href="https://www.cs.otago.ac.nz/graphics/Geoff/tartini/papers/A_Smarter_Way_to_Find_Pitch.pdf" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">
+                <a href="https://www.cs.otago.ac.nz/graphics/Geoff/tartini/papers/A_Smarter_Way_to_Find_Pitch.pdf" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">
                   A Smarter Way To Find Pitch
                 </a>
               </li>
               <li>
-                <a href="https://www.researchgate.net/publication/393223558_Automatic_Guitar_Transcription_with_Deep_Neural_Networks" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">
+                <a href="https://www.researchgate.net/publication/393223558_Automatic_Guitar_Transcription_with_Deep_Neural_Networks" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">
                   Automatic Guitar Transcription With Deep Neural Networks
                 </a>
               </li>
               <li>
-                <a href="https://www.researchgate.net/publication/261633086_Instrument-centered_Music_Transcription_of_Bass_Guitar_Tracks" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">
+                <a href="https://www.researchgate.net/publication/261633086_Instrument-centered_Music_Transcription_of_Bass_Guitar_Tracks" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">
                   Instrument-centered Music Transcription of Bass Guitar Tracks
                 </a>
               </li>
               <li>
-                <a href="https://secure.aes.org/forum/pubs/ebriefs/?elib=17146" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">
+                <a href="https://secure.aes.org/forum/pubs/ebriefs/?elib=17146" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">
                   The Sonic Characteristics of the Jazz-Style Electric Bass Guitar
                 </a>
               </li>
               <li>
-                <a href="https://www.acs.psu.edu/drussell/Demos/Stiffness-Inharmonicity/Stiffness-B.html" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">
+                <a href="https://www.acs.psu.edu/drussell/Demos/Stiffness-Inharmonicity/Stiffness-B.html" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">
                   Inharmonicity due to Stiffness for Guitar Strings
                 </a>
               </li>
               <li>
-                <a href="https://www.willcoxguitars.com/lightwave-optical-pickup-system/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">
+                <a href="https://www.willcoxguitars.com/lightwave-optical-pickup-system/" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">
                   LightWave Optical Pickup System
                 </a>
               </li>
@@ -177,16 +151,15 @@ export default function BassMINTPage() {
           </div>
         </section>
 
-        {/* Separator */}
-        <div className="flex justify-center my-12">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* Bottom Home Link */}
-        <Link to="/" className="underline text-accent hover:italic text-lg inline-block">
+        <Link to="/" className="text-accent hover-slant text-lg inline-block">
           &lt;- Home
         </Link>
       </div>
     </div>
   )
 }
+
+

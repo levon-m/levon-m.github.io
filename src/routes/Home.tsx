@@ -21,28 +21,28 @@ export default function Home() {
     <div className="min-h-screen py-12 px-16 sm:px-24 lg:px-32">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <section className="mb-16">
-          <h1 className="text-5xl sm:text-6xl font-bold text-surface mb-8">
-            Hi, I'm Levon
+        <section className="mb-0">
+          <h1 className="text-6xl sm:text-7xl font-normal text-surface mb-8">
+            Hi, I'm Levon!
           </h1>
 
-          <div className="flex flex-col md:flex-row gap-8 md:gap-6 md:items-center">
+          <div className="flex flex-col md:flex-row gap-7 md:gap-5 md:items-center">
             {/* Bio */}
-            <div className="text-surface space-y-5 text-base leading-relaxed flex-1">
-              <p className="text-lg">
+            <div className="text-surface space-y-4 text-base leading-relaxed flex-1 md:pr-6 lg:pr-10">
+              <p>
                 I'm an embedded software engineer based in Los Angeles, CA.
               </p>
               <p>
                 I play bass guitar, produce electronic music, and build tools for making and performing music in a more expressive way. Currently, I'm exploring human-computer interaction, music information retrieval, and embedded ML for real-time systems. I love interdisciplinary work between engineering and creative practice, and I'm always trying to strike the perfect balance.
               </p>
               <p>
-                I hold a BSc in Computer Science from Cal Poly San Luis Obispo, with some MSc-level coursework done during an exchange program at Chalmers University of Technology in Sweden. I am also an incoming MSc student in Sound and Music Computing at Universitat Pompeu Fabra's <a href="https://www.upf.edu/web/mtg" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">Music Technology Group</a> in Barcelona, beginning Fall 2026.
+                I hold a BSc in Computer Science from Cal Poly San Luis Obispo, with some MSc-level coursework done during an exchange program at Chalmers University of Technology in Sweden. I am also an incoming MSc student in Sound and Music Computing at Universitat Pompeu Fabra's <a href="https://www.upf.edu/web/mtg" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">Music Technology Group</a> in Barcelona, beginning Fall 2026.
               </p>
               <p>
-                Since graduating in 2024, I've been building real-time embedded systems full-time at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">CK Technologies, Inc.</a> I've also done <a href="https://diversity.calpoly.edu/2024-beacon-research-symposium#Zahra%20Raste" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">undergraduate research</a> that evolved into the <a href="https://www.studiovoice.org/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">VOICE</a> non-profit, where I've been collaborating between both architects and software engineers, and exploring the relationship between social justice in modern media and urban design. I built an ML-based vocal anonymization feature of our work, and led the development of our <a href="https://my.matterport.com/show/?m=1huMtWKupqk&ss=427&sr=-.11,.78" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">interactive installation</a> for the <a href="https://timespaceexistence.com/participants/voice/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:italic">2025 Time Space Existence Biennale</a> in Venice. I've also guest lectured for the audio portion of ARCH 498 at the University of Washington regarding our work.
+                Since graduating in 2024, I've been building real-time embedded systems full-time at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">CK Technologies, Inc.</a> I've also done <a href="https://diversity.calpoly.edu/2024-beacon-research-symposium#Zahra%20Raste" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">undergraduate research</a> that evolved into the <a href="https://www.studiovoice.org/" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">VOICE</a> non-profit, where I've been collaborating between both architects and software engineers, and exploring the relationship between social justice in modern media and urban design. I built an ML-based vocal anonymization feature of our work, and led the development of our <a href="https://my.matterport.com/show/?m=1huMtWKupqk&ss=427&sr=-.11,.78" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">interactive installation</a> for the <a href="https://timespaceexistence.com/participants/voice/" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">2025 Time Space Existence Biennale</a> in Venice. I've also guest lectured for the audio portion of ARCH 498 at the University of Washington regarding our work.
               </p>
               <p>
-                Take a look at my <Link to="/bookmarks" className="underline text-accent hover:italic">bookmarks</Link> for a collection of my favorite writing, media, tools, and other sources of inspiration. I'm always looking for new people to collaborate with, so don't hesitate to reach out!
+                Take a look at my <Link to="/bookmarks" className="text-accent hover-slant">bookmarks</Link> for a collection of my favorite writing, media, tools, and other sources of inspiration. I'm always looking for new people to collaborate with, so don't hesitate to reach out!
               </p>
 
               {/* Links */}
@@ -51,7 +51,7 @@ export default function Home() {
                   href="/assets/Levon_Melkonyan_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline text-accent hover:italic"
+                  className="text-accent hover-slant"
                 >
                   CV
                 </a>
@@ -60,7 +60,7 @@ export default function Home() {
                   href="https://github.com/levon-m"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline text-accent hover:italic"
+                  className="text-accent hover-slant"
                 >
                   GitHub
                 </a>
@@ -69,14 +69,14 @@ export default function Home() {
                   href="https://www.linkedin.com/in/levonmelkonyan/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline text-accent hover:italic"
+                  className="text-accent hover-slant"
                 >
                   LinkedIn
                 </a>
                 <span className="text-surface">•</span>
                 <a
                   href="mailto:levon.melkonyan.cs@gmail.com"
-                  className="underline text-accent hover:italic"
+                  className="text-accent hover-slant"
                 >
                   Email
                 </a>
@@ -84,7 +84,7 @@ export default function Home() {
             </div>
 
             {/* Bio Image */}
-            <div className="hidden md:block md:w-96 flex-shrink-0">
+            <div className="hidden md:block md:w-80 lg:w-[22rem] flex-shrink-0">
               <img
                 src="/assets/images/bio.jpg"
                 alt="Levon Melkonyan"
@@ -94,13 +94,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Separator */}
-        <div className="flex justify-center my-20">
-          <div className="w-1/3 h-px bg-surface/20"></div>
-        </div>
+        <div className="my-10" aria-hidden="true" />
 
         {/* Projects Section */}
-        <section className="space-y-8">
+        <section className="space-y-7">
           <h2 className="text-3xl font-bold text-surface">
             Projects, Research, & Collaborations
           </h2>
@@ -118,12 +115,12 @@ export default function Home() {
               <Link
                 key={item.to}
                 to={item.to}
-                className="block group no-underline max-w-4xl mx-auto"
+                className="block group no-underline max-w-[52rem] mx-auto"
               >
-                <div className="relative bg-accent/10 rounded-2xl p-5 hover:bg-accent transition-none">
-                  <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-5 items-center`}>
+                <div className="relative bg-accent/10 rounded-2xl p-4 hover:bg-accent transition-none">
+                  <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-4 items-center`}>
                     {/* Project Image */}
-                    <div className="w-full md:w-2/5 aspect-[4/3] rounded-lg overflow-hidden">
+                    <div className="w-full md:w-[37%] aspect-[4/3] rounded-lg overflow-hidden">
                       <img
                         src={imageSrc}
                         alt={item.title}
@@ -132,8 +129,8 @@ export default function Home() {
                     </div>
 
                     {/* Project Info */}
-                    <div className="w-full md:w-3/5 space-y-3">
-                      <h2 className="text-4xl sm:text-5xl text-accent underline group-hover:italic group-hover:text-background">
+                    <div className="w-full md:w-[63%] space-y-2.5">
+                      <h2 className="text-4xl sm:text-5xl text-accent underline group-hover-slant group-hover:text-background">
                         {item.title}
                       </h2>
                       <p className="text-surface text-base">
@@ -162,3 +159,5 @@ export default function Home() {
     </div>
   )
 }
+
+
