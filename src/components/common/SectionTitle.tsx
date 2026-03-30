@@ -44,6 +44,10 @@ export function PageHeader({
   backLabel = 'Back',
   titleHref,
 }: PageHeaderProps) {
+  const linkedTitle = titleHref && titleHref.includes('github.com')
+    ? `${title} on GitHub`
+    : title
+
   return (
     <div className="mb-0">
       <Link
@@ -52,7 +56,7 @@ export function PageHeader({
       >
         &lt;- {backLabel}
       </Link>
-      <h1 className="text-6xl sm:text-7xl font-normal text-surface text-center mb-4">
+      <h1 className="text-6xl sm:text-7xl font-normal text-surface mb-4">
         {titleHref ? (
           <a
             href={titleHref}
@@ -60,7 +64,7 @@ export function PageHeader({
             rel="noopener noreferrer"
             className="text-accent hover-slant"
           >
-            {title}
+            {linkedTitle}
           </a>
         ) : (
           title

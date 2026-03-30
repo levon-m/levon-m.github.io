@@ -6,7 +6,7 @@ export default function VoicePage() {
     <div className="min-h-screen py-12 px-12 sm:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto">
         <PageHeader
-          title="VOICE"
+          title="studiovoice.org"
           titleHref="https://www.studiovoice.org/"
           backTo="/"
           backLabel="Home"
