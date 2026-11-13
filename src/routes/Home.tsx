@@ -41,9 +41,6 @@ export default function Home() {
               <p>
                 Since graduating with my BSc in 2024, I've worked full-time for a year building real-time embedded systems full-time at <a href="https://ckt.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">CK Technologies, Inc.</a> I've also done <a href="https://diversity.calpoly.edu/2024-beacon-research-symposium#Zahra%20Raste" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">undergraduate research</a> that evolved into the <a href="https://www.studiovoice.org/" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">VOICE</a> non-profit, where I've since been collaborating between both architects and software engineers, and exploring the relationship between social justice in modern media and urban design. I've been working on an ML-based vocal anonymization feature of our web platform, and led the development of our <a href="https://my.matterport.com/show/?m=1huMtWKupqk&ss=427&sr=-.11,.78" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">interactive installation</a> for the <a href="https://timespaceexistence.com/participants/voice/" target="_blank" rel="noopener noreferrer" className="text-accent hover-slant">2025 Time Space Existence Biennale</a> in Venice. This led me to guest lecture for the audio portion of ARCH 498 at the University of Washington regarding our work.
               </p>
-              <p>
-                Take a look at my <Link to="/bookmarks" className="text-accent hover-slant">bookmarks</Link> for a collection of my favorite writing, media, tools, and other sources of inspiration. I'm always looking for new people to collaborate with, so don't hesitate to reach out!
-              </p>
 
               {/* Links */}
               <div className="flex gap-3 pt-2 items-center">
@@ -105,11 +102,6 @@ export default function Home() {
             const isImageLeft = index % 2 === 0
             const tags = projectTags[item.to] || []
             const imageSrc = projectImages[item.to]
-
-            // Skip the Bookmarks page from projects
-            if (item.to === '/bookmarks') {
-              return null
-            }
 
             return (
               <Link

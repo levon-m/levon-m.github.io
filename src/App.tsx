@@ -8,7 +8,6 @@ const MicroLoopPage = lazy(() => import('./routes/MicroLoopPage'))
 const BassMINTPage = lazy(() => import('./routes/BassMINTPage'))
 const VoicePage = lazy(() => import('./routes/VoicePage'))
 const DeliveryMayhemPage = lazy(() => import('./routes/DeliveryMayhemPage'))
-const BookmarksPage = lazy(() => import('./routes/BookmarksPage'))
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
             <Route path="/bassmint" element={<BassMINTPage />} />
             <Route path="/delivery-mayhem" element={<DeliveryMayhemPage />} />
             <Route path="/voice" element={<VoicePage />} />
-            <Route path="/bookmarks" element={<BookmarksPage />} />
           </Routes>
         </Suspense>
       </main>

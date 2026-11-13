@@ -150,9 +150,4 @@ export const homeNavItems: NavItem[] = [
     subtitle: 'Co-op party game developed for Prison Island (Gothenburg, Sweden)',
     to: '/delivery-mayhem',
   },
-  {
-    title: 'Bookmarks',
-    subtitle: 'Inspiration, resources, and favorites',
-    to: '/bookmarks',
-  },
 ]
