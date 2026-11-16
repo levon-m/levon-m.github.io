@@ -17,6 +17,7 @@ const TIME_BUCKETS = [5, 15, 30, 60, 120, 300, 600]
 const SCROLL_STEPS = [25, 50, 75, 100]
 
 let current = ''
+let prevPath = ''
 let activeMs = 0
 let lastTick = 0
 let maxScroll = 0
@@ -60,13 +61,17 @@ function flush() {
 /** Call on every route change. */
 export function trackPage(path: string) {
   if (!GOATCOUNTER_CODE) return
+  // SPA: document.referrer stays the external site for every route change, so only the
+  // first pageview gets the real referrer; later ones get the previous internal page.
+  const referrer = prevPath ? location.origin + prevPath : undefined
+  prevPath = path
   flush()
   current = path
   activeMs = 0
   lastTick = Date.now()
   maxScroll = 0
   sentScroll.clear()
-  gc()?.count({ path, title: document.title })
+  gc()?.count({ path, title: document.title, ...(referrer && { referrer }) })
   setTimeout(updateScroll, 300)
 }
 
